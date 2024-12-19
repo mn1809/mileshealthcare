@@ -9,7 +9,7 @@
 		<class name="com.frontierX.SanityScripts.FxSleepActivity"/>
 		-->
 
-		<class name="com.Miles.SanityScripts.Miles_ATS_FlowAsAdmin"/>
+		<class name="com.MilesHC.SanityScripts.Miles_HCATS_FlowAsAdmin"/>
 	<!--	<class name="com.Miles.SanityScripts.Miles_ATS_FlowAsContentWriter"/> 
 		<class name="com.Miles.SanityScripts.Miles_ATS_FlowAsCounselingTeam"/>
 		<class name="com.Miles.SanityScripts.Miles_ATS_FlowAsFundingTeam"/>
