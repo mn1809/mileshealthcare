@@ -13,12 +13,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.milesHC.BaseSettings.MilesSettings;
+import com.milesHC.BaseSettings.MilesHealthCareSettings;
 import com.milesHC.PageLibRepo.HomePageLib;
 import com.milesHC.PageLibRepo.LoginPageLib;
 import com.milesHC.Utilities.MilesUtilities;
 
-public class FxPremiumUserWorkFlows extends MilesSettings
+public class FxPremiumUserWorkFlows extends MilesHealthCareSettings
 {	
 	 WebDriver driver = null ;
 	 LoginPageLib login ;

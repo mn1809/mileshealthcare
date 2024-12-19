@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.milesHC.BaseSettings.MilesBasePage;
+import com.milesHC.BaseSettings.MilesHealthCareBasePage;
 
-public class ForgotPasswordPageObj extends MilesBasePage
+public class ForgotPasswordPageObj extends MilesHealthCareBasePage
 {
 	
 	protected WebElement userMsg = driver.findElement(By.xpath("//*[contains(@class, 'user-message')]"));

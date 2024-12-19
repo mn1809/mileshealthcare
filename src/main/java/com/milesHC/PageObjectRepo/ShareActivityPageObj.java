@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.milesHC.BaseSettings.MilesBasePage;
+import com.milesHC.BaseSettings.MilesHealthCareBasePage;
 
-public class ShareActivityPageObj extends MilesBasePage
+public class ShareActivityPageObj extends MilesHealthCareBasePage
 {
 	
 	//protected WebElement Duriation = driver.findElement(By.id("wd-duration-value"));

@@ -11,11 +11,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import com.milesHC.BaseSettings.MilesBasePage;
+import com.milesHC.BaseSettings.MilesHealthCareBasePage;
 
 
 
-public class atspageObj extends MilesBasePage
+public class atspageObj extends MilesHealthCareBasePage
 
 {	
 	

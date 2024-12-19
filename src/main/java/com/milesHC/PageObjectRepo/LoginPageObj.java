@@ -7,9 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.milesHC.BaseSettings.MilesBasePage;
+import com.milesHC.BaseSettings.MilesHealthCareBasePage;
 
-public class LoginPageObj extends MilesBasePage
+public class LoginPageObj extends MilesHealthCareBasePage
 {
 
 	//	Creating WebElements

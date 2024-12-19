@@ -36,9 +36,9 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.openqa.selenium.WebElement;
 
-import com.milesHC.BaseSettings.MilesSettings;
+import com.milesHC.BaseSettings.MilesHealthCareSettings;
 import com.milesHC.PageLibRepo.HCATSPageLib;
-import com.milesHC.PageLibRepo.ATSVisaLib;
+import com.milesHC.PageLibRepo.HCATSVisaLib;
 import com.milesHC.PageLibRepo.HCAdminPageLib;
 import com.milesHC.PageLibRepo.HomePageLib;
 import com.milesHC.PageLibRepo.LoginPageLib;
@@ -48,7 +48,7 @@ import com.milesHC.PageObjectRepo.OPTPageObj;
 import com.milesHC.PageObjectRepo.atspageObj;
 import com.milesHC.Utilities.MilesUtilities;
 
-public class Miles_HCATS_FlowAsVisaTeam extends MilesSettings
+public class Miles_HCATS_FlowAsVisaTeam extends MilesHealthCareSettings
 {	
 	 WebDriver driver = null ;
 	 
@@ -213,7 +213,7 @@ private void SetEvidenceDir()
 public void VerifyU13CBucketStage1() throws InterruptedException, AWTException
 
 {
-	ATSVisaLib ATSV = new ATSVisaLib(driver);
+	HCATSVisaLib ATSV = new HCATSVisaLib(driver);
 
 	Thread.sleep(2000);
 	ATSV.U13CBucketStage1(); //-----------------------------Uploading Copy Of I20 Documents-----------------//
@@ -224,7 +224,7 @@ public void VerifyU13CBucketStage1() throws InterruptedException, AWTException
 public void VerifyU13CBucketStage2() throws InterruptedException
 
 {
-	ATSVisaLib ATSV = new ATSVisaLib(driver);
+	HCATSVisaLib ATSV = new HCATSVisaLib(driver);
 	Thread.sleep(2000);
 	ATSV.U13CBucketStage2();//------------------------Approving I20 Documents----------------------//
 }
@@ -233,7 +233,7 @@ public void VerifyU13CBucketStage2() throws InterruptedException
 //@Test (priority = 3, description = "U14 Miles Fincial Submitted to US Unversity Stage1")
 public void VerifyU14BucketSatge1() throws InterruptedException
 {
-	ATSVisaLib ATSV = new ATSVisaLib(driver);
+	HCATSVisaLib ATSV = new HCATSVisaLib(driver);
 	
 	Thread.sleep(2000);
 	ATSV.U14BucketStage1();
@@ -242,7 +242,7 @@ public void VerifyU14BucketSatge1() throws InterruptedException
 //@Test (priority = 4, description = "U14 Miles Fincial Submitted to US Unversity Stage2")
 public void VerifyU14BucketStage2() throws InterruptedException, AWTException
 {
-	ATSVisaLib ATSV = new ATSVisaLib(driver);
+	HCATSVisaLib ATSV = new HCATSVisaLib(driver);
 	
 	Thread.sleep(2000);
 	ATSV.U14BucketStage2();//-----------------------------Uploading DS160 Documents--------------------//
@@ -252,7 +252,7 @@ public void VerifyU14BucketStage2() throws InterruptedException, AWTException
 //@Test (priority = 5, description = "U14 Miles Fincial Submitted to US Unversity Stage3")
 public void VerifyU14BucketStage3() throws InterruptedException, AWTException
 {
-	ATSVisaLib ATSV = new ATSVisaLib(driver);
+	HCATSVisaLib ATSV = new HCATSVisaLib(driver);
 	
 	Thread.sleep(2000);
 	ATSV.U14BucketStage3();//-------------------------------------Approving DS160--------------------------//
@@ -262,7 +262,7 @@ public void VerifyU14BucketStage3() throws InterruptedException, AWTException
 //@Test (priority = 6, description = "U15 Miles DS160 Submitted Submitting VISA Slot Details ")
 public void VerifyU15BucketStage2VISASlotDetails() throws InterruptedException, AWTException
 {
-	ATSVisaLib ATSV = new ATSVisaLib(driver);
+	HCATSVisaLib ATSV = new HCATSVisaLib(driver);
 	
 	Thread.sleep(2000);
 	ATSV.U15BucketStage2UploadingVISADetails();	//-------------------------Uploading VISA SLOT Details and Documents----------------------//
@@ -272,7 +272,7 @@ public void VerifyU15BucketStage2VISASlotDetails() throws InterruptedException, 
 //@Test (priority = 7, description = "U15 Miles DS160 Submitted Approving VISA Slot Details ")
 public void VerifyU15BucketStage3VISASlotDetails() throws InterruptedException, AWTException
 {
-	ATSVisaLib ATSV = new ATSVisaLib(driver);
+	HCATSVisaLib ATSV = new HCATSVisaLib(driver);
 
 	Thread.sleep(2000);
 	ATSV.U15BucketStage3ApprovingVISADetails();//------------------------------Approving VISA Slot Details and Documents--------------------//
@@ -282,7 +282,7 @@ public void VerifyU15BucketStage3VISASlotDetails() throws InterruptedException, 
 //@Test (priority = 8, description = "U16 Miles Too Book VISA Slot")
 public void VerifyU16BucketStage1() throws InterruptedException, AWTException
 {
-	ATSVisaLib ATSV = new ATSVisaLib(driver);
+	HCATSVisaLib ATSV = new HCATSVisaLib(driver);
 
 	Thread.sleep(2000);
 	ATSV.U16Bucket();
@@ -294,7 +294,7 @@ public void VerifyU16BucketStage1() throws InterruptedException, AWTException
 //@Test (priority = 9, description = "U16 Miles Book Visa Mock Interview")
 public void VerifyU16BucketStage2() throws InterruptedException, AWTException
 {
-	ATSVisaLib ATSV = new ATSVisaLib(driver);
+	HCATSVisaLib ATSV = new HCATSVisaLib(driver);
 	
 	Thread.sleep(2000);
 	U16TooBookVISAMock();
@@ -303,7 +303,7 @@ public void VerifyU16BucketStage2() throws InterruptedException, AWTException
 //@Test (priority = 10, description = "U16 Miles Attending Visa Mock Interview")
 public void VerifyU16BucketStage3() throws InterruptedException, AWTException
 {
-	ATSVisaLib ATSV = new ATSVisaLib(driver);
+	HCATSVisaLib ATSV = new HCATSVisaLib(driver);
 	
 	Thread.sleep(2000);
 	U16ToAttendingMeeting();
@@ -312,7 +312,7 @@ public void VerifyU16BucketStage3() throws InterruptedException, AWTException
 //@Test (priority = 11, description = "U16 Miles Book Visa Received")
 public void VerifyU16BucketStage4() throws InterruptedException, AWTException
 {
-	ATSVisaLib ATSV = new ATSVisaLib(driver);
+	HCATSVisaLib ATSV = new HCATSVisaLib(driver);
 	
 	Thread.sleep(2000);
 	ATSV.U16VisaRecevied();
@@ -322,7 +322,7 @@ public void VerifyU16BucketStage4() throws InterruptedException, AWTException
 //@Test (priority = 12, description = "U17 Miles Bucket Uploading Visa Proof")
 public void VerifyU17BucketStage1() throws InterruptedException, AWTException
 {
-	ATSVisaLib ATSV = new ATSVisaLib(driver);
+	HCATSVisaLib ATSV = new HCATSVisaLib(driver);
 	
 	Thread.sleep(2000);
 	ATSV.U17Stage1UploadingVISA();	 //-------------------Uploading VISA Proof--------------------//
@@ -332,7 +332,7 @@ public void VerifyU17BucketStage1() throws InterruptedException, AWTException
 public void VerifyU17BucketStage2() throws InterruptedException, AWTException
 {	
 	
-	ATSVisaLib ATSV = new ATSVisaLib(driver);
+	HCATSVisaLib ATSV = new HCATSVisaLib(driver);
 
 	Thread.sleep(2000);
 	ATSV.U17Stage2ApprovingVISA();		//-------------------------------------Approving VISA--------------------------//	
@@ -729,7 +729,7 @@ public void BookExpertSessionU7Window() throws InterruptedException
 
 public void U16ToAttendingMeeting() throws InterruptedException
 {
-	ATSVisaLib ATSV = new ATSVisaLib(driver);
+	HCATSVisaLib ATSV = new HCATSVisaLib(driver);
 	CandidateData1();
 	Thread.sleep(5000);
 	ATSV.ScrollToMeetingTab();

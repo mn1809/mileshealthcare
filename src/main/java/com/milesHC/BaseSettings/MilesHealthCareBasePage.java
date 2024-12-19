@@ -8,13 +8,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 
-public class MilesBasePage 
+public class MilesHealthCareBasePage 
 
 {
 	
 	protected WebDriver driver ;
 
-	public MilesBasePage(WebDriver driver)
+	public MilesHealthCareBasePage(WebDriver driver)
 	{
 		this.driver = driver ;
 		System.out.println("Trying to Initialize :"+this.toString());

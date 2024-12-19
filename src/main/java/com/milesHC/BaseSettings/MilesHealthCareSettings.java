@@ -18,7 +18,7 @@ import com.milesHC.Utilities.MilesUtilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public abstract class MilesSettings
+public abstract class MilesHealthCareSettings
 {
 	protected WebDriver driver ;
 	protected static String StageURL = "https://usp-uat.mileseducation.com/web/login";

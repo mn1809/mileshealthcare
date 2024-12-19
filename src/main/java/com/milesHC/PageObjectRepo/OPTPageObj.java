@@ -8,11 +8,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 
-import com.milesHC.BaseSettings.MilesBasePage;
+import com.milesHC.BaseSettings.MilesHealthCareBasePage;
 
 
 
-public class OPTPageObj extends MilesBasePage
+public class OPTPageObj extends MilesHealthCareBasePage
 {
 
 	   public OPTPageObj(WebDriver driver) 

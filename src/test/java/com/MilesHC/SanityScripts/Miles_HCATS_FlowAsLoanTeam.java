@@ -36,10 +36,10 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.openqa.selenium.WebElement;
 
-import com.milesHC.BaseSettings.MilesSettings;
+import com.milesHC.BaseSettings.MilesHealthCareSettings;
 import com.milesHC.PageLibRepo.HCATSLoanLib;
 import com.milesHC.PageLibRepo.HCATSPageLib;
-import com.milesHC.PageLibRepo.ATSUniversityLib;
+import com.milesHC.PageLibRepo.HCATSUniversityLib;
 import com.milesHC.PageLibRepo.HCAdminPageLib;
 import com.milesHC.PageLibRepo.HomePageLib;
 import com.milesHC.PageLibRepo.LoginPageLib;
@@ -49,7 +49,7 @@ import com.milesHC.PageObjectRepo.OPTPageObj;
 import com.milesHC.PageObjectRepo.atspageObj;
 import com.milesHC.Utilities.MilesUtilities;
 
-public class Miles_HCATS_FlowAsLoanTeam extends MilesSettings
+public class Miles_HCATS_FlowAsLoanTeam extends MilesHealthCareSettings
 {	
 	 WebDriver driver = null ;
 	 

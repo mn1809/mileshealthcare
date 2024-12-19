@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.milesHC.BaseSettings.MilesBasePage;
+import com.milesHC.BaseSettings.MilesHealthCareBasePage;
 
-public class ATSFrontendPageObj extends MilesBasePage
+public class ATSFrontendPageObj extends MilesHealthCareBasePage
 {
 
 

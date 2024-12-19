@@ -23,7 +23,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.milesHC.BaseSettings.MilesSettings;
+import com.milesHC.BaseSettings.MilesHealthCareSettings;
 import com.milesHC.PageLibRepo.HCAdminPageLib;
 import com.milesHC.PageLibRepo.HomePageLib;
 import com.milesHC.PageLibRepo.LoginPageLib;
@@ -31,7 +31,7 @@ import com.milesHC.PageLibRepo.OPTPageLib;
 import com.milesHC.PageObjectRepo.HomePageObj;
 import com.milesHC.Utilities.MilesUtilities;
 
-public class Miles_OPT_FlowAsAdmin extends MilesSettings
+public class Miles_OPT_FlowAsAdmin extends MilesHealthCareSettings
 {	
 	 WebDriver driver = null ;
 	 LoginPageLib loginObj ;

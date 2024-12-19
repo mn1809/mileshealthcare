@@ -36,9 +36,9 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.openqa.selenium.WebElement;
 
-import com.milesHC.BaseSettings.MilesSettings;
+import com.milesHC.BaseSettings.MilesHealthCareSettings;
 import com.milesHC.PageLibRepo.HCATSPageLib;
-import com.milesHC.PageLibRepo.ATSUniversityLib;
+import com.milesHC.PageLibRepo.HCATSUniversityLib;
 import com.milesHC.PageLibRepo.HCAdminPageLib;
 import com.milesHC.PageLibRepo.HomePageLib;
 import com.milesHC.PageLibRepo.LoginPageLib;
@@ -48,7 +48,7 @@ import com.milesHC.PageObjectRepo.OPTPageObj;
 import com.milesHC.PageObjectRepo.atspageObj;
 import com.milesHC.Utilities.MilesUtilities;
 
-public class Miles_HCATS_FlowAsUniversityTeam extends MilesSettings
+public class Miles_HCATS_FlowAsUniversityTeam extends MilesHealthCareSettings
 {	
 	 WebDriver driver = null ;
 	 
@@ -194,7 +194,7 @@ private void SetEvidenceDir()
 public void VerifyU9plusStage1Bucket() throws InterruptedException, AWTException
 
 {
-	ATSUniversityLib ATSU = new ATSUniversityLib(driver);
+	HCATSUniversityLib ATSU = new HCATSUniversityLib(driver);
 
 	Thread.sleep(2000);
 	ATSU.U9PlusBucket();
@@ -209,7 +209,7 @@ public void VerifyU9plusStage1Bucket() throws InterruptedException, AWTException
 
 public void VerifyU9plusStage2Bucket() throws InterruptedException, AWTException
 {
-	ATSUniversityLib ATSU = new ATSUniversityLib(driver);
+	HCATSUniversityLib ATSU = new HCATSUniversityLib(driver);
 
 	Thread.sleep(2000);
 	ATSU.U9plusVerifyApplicationSubmitted();
@@ -222,7 +222,7 @@ public void VerifyU9plusStage2Bucket() throws InterruptedException, AWTException
 
 public void VerifyU10Bucket() throws InterruptedException, AWTException
 {
-	ATSUniversityLib ATSU = new ATSUniversityLib(driver);
+	HCATSUniversityLib ATSU = new HCATSUniversityLib(driver);
 
 	Thread.sleep(3000);
 	ATSU.U10BucketStage1();
@@ -233,7 +233,7 @@ public void VerifyU10Bucket() throws InterruptedException, AWTException
 
 public void VerifyU10Stage2Bucket() throws InterruptedException
 {
-	ATSUniversityLib ATSU = new ATSUniversityLib(driver);
+	HCATSUniversityLib ATSU = new HCATSUniversityLib(driver);
 
 	Thread.sleep(3000);	
 	ATSU.U10BucketStage2();
@@ -244,7 +244,7 @@ public void VerifyU10Stage2Bucket() throws InterruptedException
 
 public void VerifyU10Stage3Bucket() throws InterruptedException
 {
-	ATSUniversityLib ATSU = new ATSUniversityLib(driver);
+	HCATSUniversityLib ATSU = new HCATSUniversityLib(driver);
 
 	Thread.sleep(2000);
 	ATSU.U10BucketStage3();

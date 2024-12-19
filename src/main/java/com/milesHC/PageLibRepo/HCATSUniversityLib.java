@@ -34,14 +34,14 @@ import com.milesHC.Utilities.MilesUtilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-public class ATSUniversityLib extends ATSUniversityObj
+public class HCATSUniversityLib extends ATSUniversityObj
 
 {	
 //	  public ATSPageLib(WebDriver driver, String env) {
 //	        super(driver, env);  // Pass driver and env to Libpage constructor
 //	    }
 
-	public ATSUniversityLib   (WebDriver driver) 
+	public HCATSUniversityLib   (WebDriver driver) 
 	{
 		super(driver);
 	
