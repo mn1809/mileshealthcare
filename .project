@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>MilesHealthcare</name>
+=======
+	<name>MilesHleathcare</name>
+>>>>>>> branch 'master' of https://github.com/mn1809/mileshealthcare.git
 	<comment></comment>
 	<projects>
 	</projects>
