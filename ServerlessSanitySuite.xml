@@ -3,8 +3,8 @@
 <suite name="Sanity Testcase - Production" preserve-order ="true">
 
  <listeners>
-        <listener class-name="com.miles.Utilities.CustomReport" />
-        <listener class-name="com.miles.Utilities.TestNameListener" /> 
+        <listener class-name="com.milesHC.Utilities.CustomReport" />
+        <listener class-name="com.milesHC.Utilities.TestNameListener" /> 
 </listeners>
 
 <suite-files>

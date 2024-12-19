@@ -21,8 +21,8 @@ Custome Report with Screenshot attached.
 -->
 
  <listeners>
-        <listener class-name="com.miles.Utilities.CustomReport" />
-        <listener class-name="com.miles.Utilities.TestNameListener" /> 
+        <listener class-name="com.milesHC.Utilities.CustomReport" />
+        <listener class-name="com.milesHC.Utilities.TestNameListener" /> 
 </listeners>
 
 	<test name="Single Test Suite" parallel = "classes"> <!--parallel = "classes"> -->
@@ -30,7 +30,7 @@ Custome Report with Screenshot attached.
 	<!--<parameter name="user" value="user"/> -->
 	<classes>
 		
-		<class name = "com.Miles.SanityScripts.Miles_ATS_FlowAsAdmin"/>
+		<class name = "com.MilesHC.SanityScripts.Miles_HCATS_FlowAsAdmin"/>
 		
 		
 		
