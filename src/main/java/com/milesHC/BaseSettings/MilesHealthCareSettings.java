@@ -21,14 +21,14 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public abstract class MilesHealthCareSettings
 {
 	protected WebDriver driver ;
-	protected static String StageURL = "https://usp-uat.mileseducation.com/web/login";
+	protected static String StageURL = "https://helthcare-uat.mileseducation.com/web/login";
 
-	protected static String ProdURL = "https://uspathway.mileseducation.com/web/login";
+	protected static String ProdURL = "https://nursing.milestalenthub.com/web/login";
 	
 	
-	protected static String FrontendStageURL = "https://miles-ats-uat-v2.web.app/auth";
+	protected static String FrontendStageURL = "https://miles-healthcare-ats-uat.web.app/auth";
 	
-	protected static String FrontendProdURL = "https://connect.mileseducation.us/auth";
+	protected static String FrontendProdURL = "https://connect.milestalenthub.us/auth";
 			
 	protected static String Environment = MilesUtilities.getOperatingSystemSystemUtils();
 	static ChromeOptions options = new ChromeOptions();

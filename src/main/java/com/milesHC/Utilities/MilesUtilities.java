@@ -443,10 +443,10 @@ public class MilesUtilities
 			
 			{
 			case ServerlessProd :
-			return "https://uspathway.mileseducation.com/";
+			return "https://nursing.milestalenthub.com/web/login";
 			
 			case ServerlessStage :
-				return "https://usp-uat.mileseducation.com/web/login";
+				return "https://helthcare-uat.mileseducation.com/web/login";
 			
 			}
 			return "";
@@ -461,10 +461,10 @@ public class MilesUtilities
 			
 			{
 			case FserveLessStage :
-			return "https://miles-ats-uat-v2.web.app/auth";
+			return "https://miles-healthcare-ats-uat.web.app/auth";
 			
 			case FServelessProd :
-				return "https://connect.mileseducation.us/auth";
+				return "https://connect.milestalenthub.us/auth";
 			
 			}
 			return "";
