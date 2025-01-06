@@ -60,7 +60,6 @@ LoginPageLib loginObj ;
 	atspageObj ATSPageLib;
 	
 	String env;
-	
 //	ShareActivityPageLib ShareActivityPageObj;
 //	 atspageObj = new ATSPageLib(driver);
 	 
@@ -238,7 +237,7 @@ public void EntireingtoMilesRequirementATSModule() throws InterruptedException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 }
 
 //@Test (priority = 4,description = "Verify ATS Module Configuration Options")
@@ -247,14 +246,14 @@ public void ATSConfigurationDropdownOptions () throws InterruptedException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	if (EneEnv.contains("prod"))
 	{
-		ATS.VerifyATSCOnfigurationOptionsProd();
+		ATS.VerifyHCATSCOnfigurationOptionsProd();
 	}
 	else
 	{
-		ATS.VerifyATSCOnfigurationOptionsStage();
+		ATS.VerifyHCATSCOnfigurationOptionsStage();
 	}
 	
 }
@@ -264,7 +263,7 @@ public void U7ASearachCandidate() throws InterruptedException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	SearchU7ACnadidate();
 	//EnteringGraduationDetails();										//--------------------------------Entering Graduation Details Mind it-------------------------------//
 }
@@ -275,7 +274,7 @@ public void U7ACandidateWindow() throws InterruptedException
 	
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	SearchU7ACnadidate();
 	CandidateU7ADetails();
 }
@@ -286,7 +285,7 @@ public void U7EnrolledLeadAllocation() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(3000);
 	SearchU7ACnadidate();
 	Thread.sleep(3000);
@@ -300,7 +299,7 @@ public void U7EnrolledBucket()throws InterruptedException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(3000);
 	SearchU7EnrolledCandidate();
 
@@ -313,7 +312,7 @@ public void CheckingU7Tabs() throws InterruptedException
 	
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(3000);
 	ATS.TabsbuttonOnU7Enrolled();
 }
@@ -324,7 +323,7 @@ public void CandidateBasicDetails() throws InterruptedException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(3000);
 	ATS.TabsbuttonOnU7Enrolled();
 	ATS.ScrollToBasicDetails();
@@ -338,7 +337,7 @@ public void UpdatingCommunicationTestResult() throws InterruptedException, AWTEx
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	ATS.TabsbuttonOnU7Enrolled();
 	Thread.sleep(3000);
 	CommunicationTestFlow();
@@ -351,7 +350,7 @@ public void VerifyAllocatingBookingExpertSession() throws InterruptedException, 
 	
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	ATS.TabsbuttonOnU7Enrolled();
 	Thread.sleep(3000);
 	if (EneEnv.contains("prod"))
@@ -374,7 +373,7 @@ public void VerifyAllocatingBookingExpert() throws InterruptedException, AWTExce
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	ATS.TabsbuttonOnU7Enrolled();
 	BookExpertSessionU7Window();
 	Thread.sleep(10000);
@@ -387,7 +386,7 @@ public void VerifyU7PlusExpertSeesionBooked() throws InterruptedException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	ATS.TabsbuttonOnU7PlusEnrolled();
 	Thread.sleep(3000);
 	
@@ -408,7 +407,7 @@ public void VerifyU7PlusExpertSeesionEligibleCandidate() throws InterruptedExcep
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	ATS.TabsbuttonOnU7PlusEnrolled();
 	Thread.sleep(3000);
 	ATS.U7PLusEligibleTheCandidate();
@@ -421,7 +420,7 @@ public void VerifyU7PlusRecommendUniversity() throws InterruptedException, AWTEx
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	ATS.TabsbuttonOnU7PlusEnrolled();
 	Thread.sleep(3000);
 	ATS.ScrollToMeetingTab();
@@ -438,7 +437,7 @@ public void VerifyU8Bucket() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 
 	ATS.U8bucket();
@@ -452,7 +451,7 @@ public void VerifyU9Stage1Bucket() throws InterruptedException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U9bucketStage1();
 	Thread.sleep(2000);
@@ -467,7 +466,7 @@ public void VerifyU9Stage2LORandSOPBucket() throws InterruptedException
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
 	Thread.sleep(2000);
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	
 	ATS.U9bucketStage2LOR();
@@ -486,7 +485,7 @@ public void VerifyU9Stage3ApplicationProofBucket() throws InterruptedException, 
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	
 	ATS.U9Stage3();
@@ -501,7 +500,7 @@ public void VerifyU9plusStage1Bucket() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U9PlusBucket();
 	Thread.sleep(2000);
@@ -517,7 +516,7 @@ public void VerifyU9plusStage2Bucket() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U9plusVerifyApplicationSubmitted();
 	Thread.sleep(2000);
@@ -531,7 +530,7 @@ public void VerifyU10Bucket() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U10BucketStage1();
 
@@ -543,7 +542,7 @@ public void VerifyU10Stage2Bucket() throws InterruptedException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);	
 	ATS.U10BucketStage2();
 
@@ -555,7 +554,7 @@ public void VerifyU10Stage3Bucket() throws InterruptedException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U10BucketStage3();
 	Thread.sleep(2000);
@@ -567,7 +566,7 @@ public void VerifyU11Stage1Bucket()throws InterruptedException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U11BucketStage1();
 }
@@ -578,7 +577,7 @@ public void verifyU11Stage2Bucket() throws InterruptedException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U11BucketStage2();	
 }
@@ -588,7 +587,7 @@ public void verifyU12Bucket() throws InterruptedException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U12BucketUSFundingType();
 	
@@ -600,7 +599,7 @@ public void VerifyU13ABucketStage1() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	
 	ATS.U13ABucketStage1USFunding();
@@ -616,7 +615,7 @@ public void VerifyU13ABucketStage2() throws InterruptedException, AWTException
 	
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U13ABucketStage2USFunding();
 	Thread.sleep(2000);
@@ -631,7 +630,7 @@ public void VerifyU13BBucketStage1() throws InterruptedException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U13BBucketSkipFinancialStage1();//----Stage1----//
 
@@ -643,7 +642,7 @@ public void VerifyU13BBucketStage2() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U13BBucketStage2(); //----------Stage2---Uploading Funding Proof------------//
 }
@@ -656,7 +655,7 @@ public void VerifyU13BBucketStage3() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U13BBucketStage3();
 }
@@ -667,7 +666,7 @@ public void VerifyU13CBucketStage1() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U13CBucketStage1(); //-----------------------------Uploading Copy Of I20 Documents-----------------//
 }
@@ -678,7 +677,7 @@ public void VerifyU13CBucketStage2() throws InterruptedException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U13CBucketStage2();//------------------------Approving I20 Documents----------------------//
 }
@@ -688,7 +687,7 @@ public void VerifyU14BucketSatge1() throws InterruptedException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U14BucketStage1();
 }
@@ -698,7 +697,7 @@ public void VerifyU14BucketStage2() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U14BucketStage2();//-----------------------------Uploading DS160 Documents--------------------//
 }
@@ -708,7 +707,7 @@ public void VerifyU14BucketStage3() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U14BucketStage3();//-------------------------------------Approving DS160--------------------------//
 }	
@@ -719,7 +718,7 @@ public void VerifyU15BucketStage1() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U15BucketStage1MandateFeilds();//---------------------------------Negative FLow For Mandate Feilds---------------//
 }
@@ -729,7 +728,7 @@ public void VerifyU15BucketStage2VISASlotDetails() throws InterruptedException, 
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U15BucketStage2UploadingVISADetails();	//-------------------------Uploading VISA SLOT Details and Documents----------------------//
 }	
@@ -740,7 +739,7 @@ public void VerifyU15BucketStage3VISASlotDetails() throws InterruptedException, 
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U15BucketStage3ApprovingVISADetails();//------------------------------Approving VISA Slot Details and Documents--------------------//
 }
@@ -750,7 +749,7 @@ public void VerifyU16BucketStage1() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U16Bucket();
 	Thread.sleep(2000);
@@ -762,7 +761,7 @@ public void VerifyU16BucketStage2() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	U16TooBookVISAMock();
 }
@@ -773,7 +772,7 @@ public void VerifyU16BucketStage3() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	U16ToAttendingMeeting();
 }
@@ -783,7 +782,7 @@ public void VerifyU16BucketStage4() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U16VisaRecevied();
 }
@@ -793,7 +792,7 @@ public void VerifyU17BucketStage1() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage();
+	ATS.VerifyInitiateHCATSPage();
 	Thread.sleep(2000);
 	ATS.U17Stage1UploadingVISA();	 //-------------------Uploading VISA Proof--------------------//
 }
@@ -804,7 +803,7 @@ public void VerifyU17BucketStage2() throws InterruptedException, AWTException
 	
 	HCATSPageLib ATS = new HCATSPageLib(driver);
 	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateATSPage(); 
+	ATS.VerifyInitiateHCATSPage(); 
 	Thread.sleep(2000);
 	ATS.U17Stage2ApprovingVISA();		//-------------------------------------Approving VISA--------------------------//	
 }

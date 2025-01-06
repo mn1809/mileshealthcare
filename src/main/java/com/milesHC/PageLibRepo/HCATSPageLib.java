@@ -92,15 +92,17 @@ public class HCATSPageLib extends atspageObj
 		Assert.assertTrue(driver.findElement(By.xpath("//*[contains(@class, 'dropdown-item o_app')]")).isDisplayed());
 		
 		Assert.assertEquals(Options.get(0).getText(), "USP Eligibility");
-		Assert.assertEquals(Options.get(1).getText(), "Miles ATS");
-		Assert.assertEquals(Options.get(2).getText(), "Miles Recruitments");
-		Assert.assertEquals(Options.get(3).getText(), "Helpdesk");
-		Assert.assertEquals(Options.get(4).getText(), "Discuss");
-		Assert.assertEquals(Options.get(5).getText(), "Calendar");
-		Assert.assertEquals(Options.get(6).getText(), "Contacts");
-		Assert.assertEquals(Options.get(7).getText(), "Employees");
-		Assert.assertEquals(Options.get(8).getText(), "Apps");
-		Assert.assertEquals(Options.get(9).getText(), "Settings");
+		Assert.assertEquals(Options.get(1).getText(), "HealthCare");
+		Assert.assertEquals(Options.get(2).getText(), "Helpdesk");
+		Assert.assertEquals(Options.get(3).getText(), "Discuss");
+		Assert.assertEquals(Options.get(4).getText(), "Calendar");
+		Assert.assertEquals(Options.get(5).getText(), "Job Queue");
+		Assert.assertEquals(Options.get(6).getText(), "My Dashboard");
+		Assert.assertEquals(Options.get(7).getText(), "Contacts");
+		Assert.assertEquals(Options.get(8).getText(), "Surveys");
+		Assert.assertEquals(Options.get(9).getText(), "Employees");
+		Assert.assertEquals(Options.get(10).getText(), "Apps");
+		Assert.assertEquals(Options.get(11).getText(), "Settings");
 		}
 		
 		}
@@ -116,24 +118,24 @@ public class HCATSPageLib extends atspageObj
 		Assert.assertTrue(driver.findElement(By.xpath("//*[contains(@class, 'dropdown-item o_app')]")).isDisplayed());
 		
 		Assert.assertEquals(Options.get(0).getText(), "USP Eligibility");
-		Assert.assertEquals(Options.get(1).getText(), "Miles ATS");
-		Assert.assertEquals(Options.get(2).getText(), "Miles Recruitments");
-		Assert.assertEquals(Options.get(3).getText(), "Helpdesk");
-		Assert.assertEquals(Options.get(4).getText(), "Discuss");
-		Assert.assertEquals(Options.get(5).getText(), "Calendar");
+		Assert.assertEquals(Options.get(1).getText(), "HealthCare");
+		Assert.assertEquals(Options.get(2).getText(), "Helpdesk");
+		Assert.assertEquals(Options.get(3).getText(), "Discuss");
+		Assert.assertEquals(Options.get(4).getText(), "Calendar");
+		Assert.assertEquals(Options.get(5).getText(), "Job Queue");
 		Assert.assertEquals(Options.get(6).getText(), "My Dashboard");
-		Assert.assertEquals(Options.get(7).getText(), "Job Queue");
-		Assert.assertEquals(Options.get(8).getText(), "Contacts");
-		Assert.assertEquals(Options.get(9).getText(), "Dashboards");
-		Assert.assertEquals(Options.get(10).getText(), "Employees");
-		Assert.assertEquals(Options.get(11).getText(), "Apps");
-		Assert.assertEquals(Options.get(12).getText(), "Settings");
+		Assert.assertEquals(Options.get(7).getText(), "Contacts");
+		Assert.assertEquals(Options.get(8).getText(), "Surveys");
+		Assert.assertEquals(Options.get(9).getText(), "Employees");
+		Assert.assertEquals(Options.get(10).getText(), "Apps");
+		Assert.assertEquals(Options.get(11).getText(), "Settings");
+		
 		}
 		
 		}
 
 	
-	public void VerifyInitiateATSPage() throws InterruptedException
+	public void VerifyInitiateHCATSPage() throws InterruptedException
 	{
 		driver.findElement(By.className("dropdown-toggle")).click();
 		List <WebElement> Options = driver.findElements(By.xpath("//*[contains(@class, 'dropdown-item o_app')]"));
@@ -142,7 +144,7 @@ public class HCATSPageLib extends atspageObj
 		Thread.sleep(4000);
 	}
 
-	public void VerifyATSCOnfigurationOptionsStage() throws InterruptedException
+	public void VerifyHCATSCOnfigurationOptionsStage() throws InterruptedException
 	{
 		 try {
              WebElement plusElement = driver.findElement(By.xpath("//*[contains(@title, 'More Menu')]"));
@@ -228,9 +230,9 @@ public class HCATSPageLib extends atspageObj
 				    "DS-160 Step",
 				    "Ineligible Reason",
 				    "Loan Provider",
-				    "Bank",
-				    "Synopsis",
 				    "Telephony call Reason",
+				    "Synopsis",
+				    "Bank",
 				    "Visa Slot City",
 				    "Questions",
 				    "Category",
@@ -240,7 +242,10 @@ public class HCATSPageLib extends atspageObj
 				    "NAAC Grade",
 				    "University Category Matrix",
 				    "University Recommendation Combination",
-				    "ATS Terms and Conditions"
+				    "Healthcare Terms and Conditions",
+				    "License Type",
+				    "ATS MF Audit Types",
+				    "Audit History"
 				);
 			 WebElement configOptions = driver.findElement(By.xpath("//*[contains(@class, 'o-dropdown--menu dropdown-menu d-block')]"));
 			 List<WebElement>OptionsIteam = configOptions.findElements(By.className("dropdown-item"));
@@ -257,7 +262,7 @@ public class HCATSPageLib extends atspageObj
 	
 	
 	
-	public void VerifyATSCOnfigurationOptionsProd() throws InterruptedException
+	public void VerifyHCATSCOnfigurationOptionsProd() throws InterruptedException
 	{
 		 try {
             WebElement plusElement = driver.findElement(By.xpath("//*[contains(@title, 'More Menu')]"));
@@ -287,7 +292,7 @@ public class HCATSPageLib extends atspageObj
 		//driver.findElement(By.xpath("//button[@title= 'Configuration']")).click();
 		// Expected options
 		List<String> expectedOptions = Arrays.asList(
-			    "Allocation Configuration",
+				"Allocation Configuration",
 			    "Enrollment Batches",
 			    "Enrollment University",
 			    "Buckets",
@@ -302,16 +307,22 @@ public class HCATSPageLib extends atspageObj
 			    "DS-160 Step",
 			    "Ineligible Reason",
 			    "Loan Provider",
-			    "Bank",
-			    "Synopsis",
 			    "Telephony call Reason",
+			    "Synopsis",
+			    "Bank",
 			    "Visa Slot City",
+			    "Questions",
+			    "Category",
 			    "Journey Decks",
+			    "MF Migration",
 			    "Student Previous Document History",
 			    "NAAC Grade",
-			    "University Grade Matrix",
+			    "University Category Matrix",
 			    "University Recommendation Combination",
-			    "ATS Terms and Conditions"
+			    "Healthcare Terms and Conditions",
+			    "License Type",
+			    "ATS MF Audit Types",
+			    "Audit History"
 			);
 		
 		 WebElement configOptions = driver.findElement(By.xpath("//*[contains(@class, 'o-dropdown--menu dropdown-menu d-block')]"));
