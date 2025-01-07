@@ -180,7 +180,7 @@ LoginPageLib loginObj ;
 			 System.out.println("<-------------Passed Test case is -> " +result.getName()+"-------------->");
 		 }
 		 
-		 driver.quit();
+		// driver.quit();
 	
 	 }
 	 
@@ -270,48 +270,7 @@ public void U7AAllocatingGMCandidate() throws InterruptedException
 	ATS.VerifyInitiateHCATSPage();
 	SearchU7ACnadidate();
 	
-	driver.findElement(By.xpath("//*[contains(@title, 'Lead Allocation')]")).click();
-	Thread.sleep(4000);
-	
-	driver.findElements(By.xpath("//*[contains(@role, 'menuitem')]")).get(1).click();
-	Thread.sleep(2000);
-	driver.findElement(By.className("o_searchview_input")).click();
-	Thread.sleep(2000);
-	driver.findElement(By.className("o_searchview_input")).sendKeys("Automation-User1");
-	Thread.sleep(4000);
-//	List <WebElement> Options = driver.findElements((By.xpath("//b[normalize-space()='Student']")));
-//	Options.get(0).click();
-	
-	driver.findElement((By.xpath("//b[normalize-space()='Student']"))).click();
-	 Thread.sleep(4000);
-		driver.findElement(By.id("checkbox-comp-1")).click();
-		 Thread.sleep(3000);
-		 
-		driver.findElement(By.xpath("//*[contains(@name, 'open_wiz_allocate_gm_spoc_to_lead')]")).click();
-		Thread.sleep(3000);
-		
-		WebElement Gm =	driver.findElements(By.xpath("//*[contains(@class, 'o-autocomplete--input o_input')]")).get(0);   //------------ADDING GENERAL MANAGER-------------//
-		
-		Gm.click();
-		Thread.sleep(2000);
-		Gm.sendKeys("Manoj Expert");
-		Thread.sleep(2000);
-		List <WebElement> Options1 = driver.findElements((By.xpath("//*[contains(@class, 'o-autocomplete--dropdown-menu dropdown-menu ui-widget ui-autocomplete show')]")));
-		Options1.get(0).click();
-		Thread.sleep(2000);
-	
-		
-		WebElement Spoc = driver.findElement(By.id("gm_spoc_id"));        //--------------ADDING SPOC------------//
-		Spoc.click();
-		Thread.sleep(2000);
-		Spoc.sendKeys("Manoj Spoc");
-		Thread.sleep(2000);
-		List <WebElement> Options2 = driver.findElements((By.xpath("//*[contains(@class, 'o-autocomplete--dropdown-menu dropdown-menu ui-widget ui-autocomplete show')]")));
-		Options2.get(0).click();
-		Thread.sleep(2000);
-		
-		driver.findElement((By.xpath("//*[contains(@name, 'action_allocate_gm_to_leads')]"))).click();  //-----------------------Final OK ALLOCTING---------------------//
-		Thread.sleep(10000);
+	ATS.U7AAllocatingGM2Candidate();
 }
 
 //@Test (priority = 6,description = "Verify ATS Module Entering UG Education Details.")
@@ -365,7 +324,9 @@ public void U7PRecommendUniversity() throws InterruptedException
 	ATS.ClearMyCandidateFilter();
 	ATS.VerifyInitiateHCATSPage();										//----------------------------------------Entering Auto Recommend University----------------------------------//
 	SearchU7ACnadidate();
-	ATS.AutoRecommendUniversity();
+	ATS.HCRecommendUniversity();
+	Thread.sleep(2000);
+	ATS.RecommendationCompleted();
 
 }
 
@@ -379,22 +340,22 @@ public void U7PRecommendUniversity() throws InterruptedException
 //	SearchU7ACnadidate();
 //	CandidateU7ADetails();
 //}
-	
-//@Test (priority = 11,description  = "Verify ATS Module Candidate Allocation For GM")
 
-public void U7EnrolledLeadAllocation() throws InterruptedException, AWTException
-{
-	HCATSPageLib ATS = new HCATSPageLib(driver);
-	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateHCATSPage();
-	Thread.sleep(3000);								//--------------------NEED TO BE ADDRESSED-----------------//
-	SearchU7ACnadidate();
-	Thread.sleep(3000);
-	//CandidateU7AllocationProcess();
-	
-}
+//@Test (priority = 11,description  = "Verify HCATS Module Candidate Allocation For GM")
+//
+//public void U7EnrolledLeadAllocation() throws InterruptedException, AWTException
+//{
+//	HCATSPageLib ATS = new HCATSPageLib(driver);
+//	ATS.ClearMyCandidateFilter();
+//	ATS.VerifyInitiateHCATSPage();
+//	Thread.sleep(3000);								//-------------------------DONT SUe this------------------------//
+//	SearchU7ACnadidate();
+//	Thread.sleep(3000);
+//	CandidateU7AllocationProcess();
+//	
+//}
 
-//@Test (priority = 12,description = "Verify ATS Module Candidate U7 Enrolled Bucket")
+//@Test (priority = 11,description = "Verify HCATS Module Candidate U7 Enrolled Bucket")
 
 public void U7EnrolledBucket()throws InterruptedException
 {
@@ -406,7 +367,7 @@ public void U7EnrolledBucket()throws InterruptedException
 
 }
 
-//@Test (priority = 13,description = "Verify ATS Module Candidate U7 Reallocate")
+//@Test (priority = 12,description = "Verify HCATS Module Candidate U7 Reallocate")
 
 public void CheckingU7Reallocate() throws InterruptedException
 {	
@@ -420,7 +381,7 @@ public void CheckingU7Reallocate() throws InterruptedException
 	ATS.ReAllocate();
 }
 
-//@Test (priority = 14, description = "Verify Candidate Basic Details in U7 Enrolled Bucket")
+//@Test (priority = 13, description = "Verify Candidate Basic Details in U7 Enrolled Bucket")
 
 public void CandidateBasicDetails() throws InterruptedException
 {
@@ -434,7 +395,7 @@ public void CandidateBasicDetails() throws InterruptedException
 
 }
 
-//@Test (priority = 15, description = "Verify Updating Candidate Communication Test Result")
+//@Test (priority = 14, description = "Verify Updating Candidate Communication Test Result")
 
 public void UpdatingCommunicationTestResult() throws InterruptedException, AWTException
 {
@@ -447,7 +408,7 @@ public void UpdatingCommunicationTestResult() throws InterruptedException, AWTEx
 	
 }
 
-//@Test (priority = 16, description = "Booking Expert Session From SPOC to Candidate")
+//@Test (priority = 15, description = "Booking Expert Session From SPOC to Candidate")
 public void VerifyAllocatingBookingExpertSession() throws InterruptedException, AWTException
 {
 	
@@ -472,7 +433,7 @@ public void VerifyAllocatingBookingExpertSession() throws InterruptedException, 
 }
 //------------------------Needed to be added the Recommend university--------------------//
 
-//@Test (priority = 17, description = "Booking Expert Session U7 window")
+//@Test (priority = 16, description = "Booking Expert Session U7 window")
 public void VerifyAllocatingBookingExpert() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
@@ -486,7 +447,7 @@ public void VerifyAllocatingBookingExpert() throws InterruptedException, AWTExce
 }
 
 
-//@Test (priority = 18, description = "U7+ Expert Session Booked")
+//@Test (priority = 17, description = "U7+ Expert Session Booked")
 
 public void VerifyU7PlusExpertSeesionBooked() throws InterruptedException
 {
@@ -507,7 +468,7 @@ public void VerifyU7PlusExpertSeesionBooked() throws InterruptedException
 
 }
 
-//@Test (priority = 19, description = "U7+ Expert Session Booked Eligible Candidate")
+//@Test (priority = 18, description = "U7+ Expert Session Booked Eligible Candidate")
 
 public void VerifyU7PlusExpertSeesionEligibleCandidate() throws InterruptedException
 {
@@ -518,12 +479,12 @@ public void VerifyU7PlusExpertSeesionEligibleCandidate() throws InterruptedExcep
 	ATS.TabsbuttonOnU7PlusEnrolled();
 	Thread.sleep(3000);
 
-	ATS.RecommendationCompleted();
+	//ATS.RecommendationCompleted();
 	Thread.sleep(3000);	
 	
 }
 
-//@Test (priority = 20, description = "U7+ Batch Intake with Elgible")
+//@Test (priority = 19, description = "U7+ Batch Intake with Elgible")
 public void VerifyU7PlusBatchIntake() throws InterruptedException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
@@ -535,23 +496,8 @@ public void VerifyU7PlusBatchIntake() throws InterruptedException
 	ATS.U7PLusEligibleTheCandidate();  //---------------------EVEN With INtake has been added ---------------------//
 }
 
-//@Test (priority = 21, description = "U7+ Recommend University To Candidate")
-public void VerifyU7PlusRecommendUniversity() throws InterruptedException, AWTException
-{
-	HCATSPageLib ATS = new HCATSPageLib(driver);
-	ATS.ClearMyCandidateFilter();
-	ATS.VerifyInitiateHCATSPage();
-	ATS.TabsbuttonOnU7PlusEnrolled();
-	Thread.sleep(3000);
-	ATS.ScrollToMeetingTab();
-	Thread.sleep(3000);
-//	ATS.Recommenduniversity();
-//	Thread.sleep(3000);
-//	ATS.U7PLusEligibleTheCandidate();
 
-}
-
-//@Test (priority = 22, description = "U8 Expert Session Done Bucket")
+//@Test (priority = 20, description = "U8 Expert Session Done Bucket with MSA Signed")
 
 public void VerifyU8Bucket() throws InterruptedException, AWTException
 {
@@ -562,10 +508,10 @@ public void VerifyU8Bucket() throws InterruptedException, AWTException
 
 	ATS.U8bucket();
 	Thread.sleep(3000);
-	ATS.MSASigned();
+	ATS.MSASigned();   				//Based on Intake the Attachments will be decided//
 }
 
-//@Test (priority = 23, description = "U9 MSA SIGNED")
+//@Test (priority = 21, description = "U9 Select University")
 
 public void VerifyU9Stage1Bucket() throws InterruptedException
 {
@@ -579,7 +525,7 @@ public void VerifyU9Stage1Bucket() throws InterruptedException
 	
 }
 
-//@Test (priority = 24, description = "U9 MSA SIGNED LOR and SOP")
+//@Test (priority = 22, description = "U9 MSA SIGNED LOR and SOP")
 
 public void VerifyU9Stage2LORandSOPBucket() throws InterruptedException
 {
@@ -599,7 +545,7 @@ public void VerifyU9Stage2LORandSOPBucket() throws InterruptedException
 
 }
 
-//@Test (priority = 25, description = "U9 MSA SIGNED")
+//@Test (priority = 23, description = "U9 Upload application proof")
 
 public void VerifyU9Stage3ApplicationProofBucket() throws InterruptedException, AWTException
 
@@ -614,7 +560,7 @@ public void VerifyU9Stage3ApplicationProofBucket() throws InterruptedException, 
 	ATS.UploadationOfApplicationProof();
 }
 
-//@Test (priority = 26, description = "U9+ Application Submitted Process")
+//@Test (priority = 24, description = "U9+ Application Submitted Process")
 
 public void VerifyU9plusStage1Bucket() throws InterruptedException, AWTException
 
@@ -631,7 +577,7 @@ public void VerifyU9plusStage1Bucket() throws InterruptedException, AWTException
 	
 }
 
-//@Test (priority = 27, description= "U9+ Application Initiated")
+//@Test (priority = 25, description= "U9+ Application Initiated")
 
 public void VerifyU9plusStage2Bucket() throws InterruptedException, AWTException
 {
@@ -645,7 +591,7 @@ public void VerifyU9plusStage2Bucket() throws InterruptedException, AWTException
 
 }
 
-//@Test (priority = 28, description= "U10 Upload Offer Letter")
+//@Test (priority = 26, description= "U10 Upload Offer Letter")
 
 public void VerifyU10Bucket() throws InterruptedException, AWTException
 {
@@ -657,7 +603,7 @@ public void VerifyU10Bucket() throws InterruptedException, AWTException
 
 }
 
-//@Test (priority = 29, description= "U10 Approve Offer Letter")
+//@Test (priority = 27, description= "U10 Approve Offer Letter")
 
 public void VerifyU10Stage2Bucket() throws InterruptedException
 {
@@ -669,7 +615,7 @@ public void VerifyU10Stage2Bucket() throws InterruptedException
 
 }
 
-//@Test (priority = 30, description= "U10 Final Approver of Offer Letter")
+//@Test (priority = 28, description= "U10 Final Approver of Offer Letter")
 
 public void VerifyU10Stage3Bucket() throws InterruptedException
 {
@@ -681,7 +627,7 @@ public void VerifyU10Stage3Bucket() throws InterruptedException
 	Thread.sleep(3000);
 }
 
-//@Test (priority = 31, description = "U11 Miles Pathway Funding")
+//@Test (priority = 29, description = "U11 Miles Pathway Funding")
 
 public void VerifyU11Stage1Bucket()throws InterruptedException
 {
@@ -692,7 +638,7 @@ public void VerifyU11Stage1Bucket()throws InterruptedException
 	ATS.U11BucketStage1();
 }
 
-//@Test (priority = 32, description = "U11 Miles Pathway Fee Received")
+//@Test (priority = 30, description = "U11 Miles Pathway Fee Received")
 public void verifyU11Stage2Bucket() throws InterruptedException
 
 {
@@ -703,7 +649,7 @@ public void verifyU11Stage2Bucket() throws InterruptedException
 	ATS.U11BucketStage2();	
 }
 
-//@Test (priority = 33, description = "U12 Miles US Pathway Funding Type")
+//@Test (priority = 31, description = "U12 Miles US Pathway Funding Type")
 public void verifyU12Bucket() throws InterruptedException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
@@ -714,7 +660,7 @@ public void verifyU12Bucket() throws InterruptedException
 	
 }
 
-//@Test (priority = 34, description = "U13A Miles US Funding Bucket Stage1")
+//@Test (priority = 32, description = "U13A Miles US Funding Bucket Stage1")
 
 public void VerifyU13ABucketStage1() throws InterruptedException, AWTException
 {
@@ -729,7 +675,7 @@ public void VerifyU13ABucketStage1() throws InterruptedException, AWTException
 
 }
 
-//@Test (priority = 35, description = "U13A Miles US Funding Bucket Stage2 Approving US Funding Documnents")
+//@Test (priority = 33, description = "U13A Miles US Funding Bucket Stage2 Approving US Funding Documnents")
 
 public void VerifyU13ABucketStage2() throws InterruptedException, AWTException
 {
@@ -744,7 +690,7 @@ public void VerifyU13ABucketStage2() throws InterruptedException, AWTException
 
 }
 
-//@Test (priority = 36, description = "U13B Miles US Funding Financial Skips Bucket Stage 1")
+//@Test (priority = 34, description = "U13B Miles US Funding Financial Skips Bucket Stage 1")
 
 public void VerifyU13BBucketStage1() throws InterruptedException
 
@@ -757,7 +703,7 @@ public void VerifyU13BBucketStage1() throws InterruptedException
 
 }
 
-//@Test (priority = 37, description = "U13B Miles US Funding Uploading Funding Proof Bucket Stage 2")
+//@Test (priority = 35, description = "U13B Miles HC Funding Uploading Funding Proof Bucket Stage 2")
 public void VerifyU13BBucketStage2() throws InterruptedException, AWTException
 
 {
@@ -770,7 +716,7 @@ public void VerifyU13BBucketStage2() throws InterruptedException, AWTException
 
 
 
-//@Test (priority = 38, description = "U13B Miles US Funding Approvving US Finace Proof Bucket Stage 3")
+//@Test (priority = 36, description = "U13B Miles US Funding Approvving HCUS Finace Proof Bucket Stage 3")
 public void VerifyU13BBucketStage3() throws InterruptedException, AWTException
 
 {
@@ -781,7 +727,7 @@ public void VerifyU13BBucketStage3() throws InterruptedException, AWTException
 	ATS.U13BBucketStage3(); //---------Approvving US Finace Proof-------------//
 }
 
-//@Test (priority = 39, description = "U13C Miles Fincial Submitted to US Unversity Stage1")
+//@Test (priority = 37, description = "U13C Miles Fincial Submitted to HCUS Unversity Stage1")
 public void VerifyU13CBucketStage1() throws InterruptedException, AWTException
 
 {
@@ -792,7 +738,7 @@ public void VerifyU13CBucketStage1() throws InterruptedException, AWTException
 	ATS.U13CBucketStage1(); //-----------------------------Uploading Copy Of I20 Documents-----------------//
 }
 
-//@Test (priority = 40, description = "U13C Miles Fincial Submitted to US Unversity Stage2")
+//@Test (priority = 38, description = "U13C Miles Fincial Submitted to HCUS ApprovingI20 Stage2")
 public void VerifyU13CBucketStage2() throws InterruptedException
 
 {
@@ -803,7 +749,7 @@ public void VerifyU13CBucketStage2() throws InterruptedException
 	ATS.U13CBucketStage2();//------------------------Approving I20 Documents----------------------//
 }
 
-//@Test (priority = 41, description = "U14 Miles Fincial Submitted to US Unversity Stage1")
+//@Test (priority = 39, description = "U14 Miles Fincial Submitted to HCUS Unversity Stage1")
 public void VerifyU14BucketSatge1() throws InterruptedException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
@@ -813,7 +759,7 @@ public void VerifyU14BucketSatge1() throws InterruptedException
 	ATS.U14BucketStage1();
 }
 
-//@Test (priority = 42, description = "U14 Miles Fincial Submitted to US Unversity Stage2")
+//@Test (priority = 40, description = "U14 Miles Fincial Submitted to HCUS  Stage2")
 public void VerifyU14BucketStage2() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
@@ -823,7 +769,7 @@ public void VerifyU14BucketStage2() throws InterruptedException, AWTException
 	ATS.U14BucketStage2();//-----------------------------Uploading DS160 Documents--------------------//
 }
 
-//@Test (priority = 43, description = "U14 Miles Fincial Submitted to US Unversity Stage3")
+//@Test (priority = 41, description = "U14 Miles Fincial Submitted to HCUS  Stage3")
 public void VerifyU14BucketStage3() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
@@ -834,7 +780,7 @@ public void VerifyU14BucketStage3() throws InterruptedException, AWTException
 }	
 
 
-//@Test (priority = 44, description = "U15 Miles DS160 Submitted")
+//@Test (priority = 42, description = "U15 Miles DS160 Submitted")
 public void VerifyU15BucketStage1() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
@@ -844,7 +790,7 @@ public void VerifyU15BucketStage1() throws InterruptedException, AWTException
 	ATS.U15BucketStage1MandateFeilds();//---------------------------------Negative FLow For Mandate Feilds---------------//
 }
 
-//@Test (priority = 45, description = "U15 Miles DS160 Submitted Submitting VISA Slot Details ")
+//@Test (priority = 43, description = "U15 Miles DS160 Submitted Submitting VISA Slot Details ")
 public void VerifyU15BucketStage2VISASlotDetails() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
@@ -855,7 +801,7 @@ public void VerifyU15BucketStage2VISASlotDetails() throws InterruptedException, 
 }	
 
 
-//@Test (priority = 46, description = "U15 Miles DS160 Submitted Approving VISA Slot Details ")
+//@Test (priority = 44, description = "U15 Miles DS160 Submitted Approving VISA Slot Details ")
 public void VerifyU15BucketStage3VISASlotDetails() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
@@ -865,7 +811,7 @@ public void VerifyU15BucketStage3VISASlotDetails() throws InterruptedException, 
 	ATS.U15BucketStage3ApprovingVISADetails();//------------------------------Approving VISA Slot Details and Documents--------------------//
 }
 
-//@Test (priority = 47, description = "U16 Miles Too Book VISA Slot")
+//@Test (priority = 45, description = "U16 Miles Too Book VISA Slot")
 public void VerifyU16BucketStage1() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
@@ -877,7 +823,7 @@ public void VerifyU16BucketStage1() throws InterruptedException, AWTException
 	ATS.TooBookVISASlot();				//----------------------VISA Booking Slot---------------------//
 }
 
-//@Test (priority = 48, description = "U16 Miles Book Visa Mock Interview")
+//@Test (priority = 46, description = "U16 HCMiles Book Visa Mock Interview")
 public void VerifyU16BucketStage2() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
@@ -888,7 +834,7 @@ public void VerifyU16BucketStage2() throws InterruptedException, AWTException
 }
 
 
-//@Test (priority = 49, description = "U16 Miles Attending Visa Mock Interview")
+//@Test (priority = 47, description = "U16 HCMiles Attending Visa Mock Interview")
 public void VerifyU16BucketStage3() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
@@ -898,7 +844,7 @@ public void VerifyU16BucketStage3() throws InterruptedException, AWTException
 	U16ToAttendingMeeting();
 }
 
-//@Test (priority = 50, description = "U16 Miles Book Visa Received")
+//@Test (priority = 48, description = "U16 HCMiles Book Visa Received")
 public void VerifyU16BucketStage4() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
@@ -908,7 +854,7 @@ public void VerifyU16BucketStage4() throws InterruptedException, AWTException
 	ATS.U16VisaRecevied();
 }
 
-//@Test (priority = 51, description = "U17 Miles Bucket Uploading Visa Proof")
+//@Test (priority = 49, description = "U17 Miles Bucket Uploading Visa Proof")
 public void VerifyU17BucketStage1() throws InterruptedException, AWTException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
@@ -918,7 +864,7 @@ public void VerifyU17BucketStage1() throws InterruptedException, AWTException
 	ATS.U17Stage1UploadingVISA();	 //-------------------Uploading VISA Proof--------------------//
 }
 
-//@Test (priority = 52, description = "U17 Miles Bucket Approving Visa Proof")
+@Test (priority = 50, description = "U17 Miles Bucket Approving Visa Proof")
 public void VerifyU17BucketStage2() throws InterruptedException, AWTException
 {	
 	
@@ -933,9 +879,7 @@ public void VerifyU17BucketStage2() throws InterruptedException, AWTException
 	 * Helper Methods
 	 */
 
-/*
- * Helper Methods
- */
+
 
 public void CandidateData() throws InterruptedException
 {
@@ -1560,11 +1504,16 @@ public void U16TooBookVISAMock() throws InterruptedException
 	driver.findElement(By.xpath("//*[contains(@class, 'btn button_orange_color btn-secondary')]")).click();
 	
 	Thread.sleep(2000);
-	System.out.println("Booking Session is "+driver.findElements(By.xpath("//*[contains(@class, 'o_cell o_wrap_input flex-grow-1 flex-sm-grow-0 text-break')]")).get(13).getText());
+//	System.out.println("Booking Session is "+driver.findElements(By.xpath("//*[contains(@class, 'o_cell o_wrap_input flex-grow-1 flex-sm-grow-0 text-break')]")).get(13).getText());
+//	Thread.sleep(2000);
+
+	
+	System.out.println("Booking Session is "+driver.findElements(By.xpath("//*[contains(@name, 'session_id')]")).get(0).getText());
 	Thread.sleep(2000);
-	System.out.println("Counselor is "+driver.findElements(By.xpath("//*[contains(@class, 'o_cell o_wrap_input flex-grow-1 flex-sm-grow-0 text-break')]")).get(14).getText());
+	//span[contains(text(),'VISA Mock Session')]
+	System.out.println("Counselor is "+driver.findElements(By.xpath("//*[contains(@name, 'emp_id')]")).get(0).getText());
 	Thread.sleep(2000);
-	System.out.println("Student is "+driver.findElements(By.xpath("//*[contains(@class, 'o_cell o_wrap_input flex-grow-1 flex-sm-grow-0 text-break')]")).get(15).getText());
+	System.out.println("Student is "+driver.findElements(By.xpath("//*[contains(@name, 'student_id')]")).get(0).getText());
 	Thread.sleep(2000);
 	
 	//driver.findElements(By.xpath("//*[contains(@class, 'o_cell o_wrap_input flex-grow-1 flex-sm-grow-0 text-break')]")).get(18).click();

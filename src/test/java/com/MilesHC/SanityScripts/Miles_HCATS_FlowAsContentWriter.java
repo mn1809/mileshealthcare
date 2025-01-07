@@ -258,7 +258,7 @@ public void ATSConfigurationDropdownOptions () throws InterruptedException
 	
 }
 
-//@Test (priority = 5,description = "Verify ATS Module Search Candidate")
+@Test (priority = 5,description = "Verify ATS Module Search Candidate")
 public void U7ASearachCandidate() throws InterruptedException
 {
 	HCATSPageLib ATS = new HCATSPageLib(driver);
@@ -344,7 +344,7 @@ public void UpdatingCommunicationTestResult() throws InterruptedException, AWTEx
 	
 }
 
-@Test (priority = 12, description = "Booking Expert Session From SPOC to Candidate")
+//@Test (priority = 12, description = "Booking Expert Session From SPOC to Candidate")
 public void VerifyAllocatingBookingExpertSession() throws InterruptedException, AWTException
 {
 	

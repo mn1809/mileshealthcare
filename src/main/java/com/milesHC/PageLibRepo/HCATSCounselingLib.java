@@ -92,7 +92,7 @@ public class HCATSCounselingLib extends ATSCounselingObj
 		
 		driver.findElement(By.id("graduation_level")).click();
 		
-		//Alternative way to select the other options//
+		//Alternative way to select the other options// 
 			WebElement paymentDropdown = driver.findElement(By.id("graduation_level"));
 
 		    // Create a Select object for the dropdown
