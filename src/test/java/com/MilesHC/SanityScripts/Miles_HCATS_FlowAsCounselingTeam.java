@@ -60,7 +60,7 @@ LoginPageLib loginObj ;
 //	protected ATSPageLib atspageObj;
 	 
  ATSCounselingObj ATSCounselingLib;
-	
+	 
 	String env;
 	
 //	ShareActivityPageLib ShareActivityPageObj;
@@ -79,8 +79,8 @@ LoginPageLib loginObj ;
 	int currentDate1 = currentDate.getDayOfMonth();
 	//int tomaroDate1 = tomaroDate.getDayOfMonth();
 	
-	 String Name = "Couselling Expert Test";
-	 String expectedInfoTxt = "Couselling Expert Test";
+	 String Name = "Automation-User1";
+	 String expectedInfoTxt = "Automation-User1";
 	// String ExpectedCanID = "B-810987678";
 	 String ExpectedEmail = "milesautomation@mileseducation.com";
 	 
@@ -207,7 +207,7 @@ private void SetEvidenceDir()
 //	 Info = "manoj.hr@mileseducation.com";
 //}
 	
-//@Test(priority = 1,description = "Verify Admin Login")
+@Test(priority = 1,description = "Verify Counseling Expert Login")
 public void ClearingHomePage() throws InterruptedException
 
 {
@@ -216,53 +216,57 @@ public void ClearingHomePage() throws InterruptedException
 }
 
 
-//@Test (priority = 2, description = "Verify ATS Module Entering UG Education Details.")
+//@Test (priority = 2, description = "Verify HCATS Module Entering UG Education Details.")
 
 public void U7PUGCandidate() throws InterruptedException
 
 {
-	HCATSCounselingLib ATSC = new HCATSCounselingLib(driver);
-	SearchU7PCnadidate();
-	Thread.sleep(3000);
-	ATSC.EnteringGraduationDetails();	
+	HCATSCounselingLib HCATSC = new HCATSCounselingLib(driver);
+	SearchU7PCnadidate();			
+	Thread.sleep(3000);														//---------------Entering UG Graduation Details--------------------//
+	HCATSC.EnteringGraduationDetails();	
 }
 
 //@Test (priority = 3,description = "Verify ATS Module Entering PG Education Details.")
 public void U7PGCandidate() throws InterruptedException
 {
-	HCATSCounselingLib ATSC = new HCATSCounselingLib(driver);
+	HCATSCounselingLib HCATSC = new HCATSCounselingLib(driver);
 	SearchU7PCnadidate();
 	Thread.sleep(3000);
-	ATSC.EnteringPGGraduationDetails();									//--------------------------------Entering PG Graduation Details Mind it-------------------------------//
+	HCATSC.EnteringPGGraduationDetails();									//--------------------------------Entering PG Graduation Details Mind it-------------------------------//
 }
 
 //@Test (priority = 4, description = "Verify Adding Certifications for Candidate")
 
 public void U7PCertifications() throws InterruptedException
 {
-	HCATSCounselingLib ATSC = new HCATSCounselingLib(driver);
+	HCATSCounselingLib HCATSC = new HCATSCounselingLib(driver);
 	SearchU7PCnadidate();
 	Thread.sleep(3000);
-	ATSC.EnteringCertificationDetails();
+	HCATSC.EnteringCertificationDetails();
 }
 
 //@Test (priority = 5, description = "Verify Adding Work Expecrience for Candidate")
 public void U7AWorkExperience() throws InterruptedException
 {
-	HCATSCounselingLib ATSC = new HCATSCounselingLib(driver);
+	HCATSCounselingLib HCATSC = new HCATSCounselingLib(driver);
 	SearchU7PCnadidate();
 	Thread.sleep(3000);
-	ATSC.EnteringWorkExperience();
+	HCATSC.EnteringWorkExperience();
 }
 
 
 
-//@Test (priority = 6, description = "Verify Auto University Recommendation For university")
+//@Test (priority = 6, description = "Veridy Auto University Recommendation For university")
 public void U7PRecommendUniversity() throws InterruptedException
 {
-	HCATSCounselingLib ATSC = new HCATSCounselingLib(driver);
-	SearchU7PCnadidate();									//----------------------------------------Entering Auto Recommend University----------------------------------//
-	ATSC.AutoRecommendUniversity();
+	HCATSCounselingLib HCATSC = new HCATSCounselingLib(driver);
+//	HCATSC.ClearMyCandidateFilter();
+//	HCATSC.VerifyInitiateHCATSPage();										//----------------------------------------Entering Auto Recommend University----------------------------------//
+	SearchU7PCnadidate();
+	HCATSC.HCRecommendUniversity();
+	Thread.sleep(2000);
+	HCATSC.RecommendationCompleted();
 
 }
 
@@ -271,20 +275,20 @@ public void VerifyAllocatingBookingExpertSession() throws InterruptedException, 
 
 {
 	
-	HCATSCounselingLib ATSC = new HCATSCounselingLib(driver);
+	HCATSCounselingLib HCATSC = new HCATSCounselingLib(driver);
 
-	ATSC.TabsbuttonOnU7Enrolled();
+	HCATSC.TabsbuttonOnU7Enrolled();
 	Thread.sleep(3000);
 	if (EneEnv.contains("prod"))
 	{
-		ATSC.TooBookExpertSessionProd();
+		HCATSC.TooBookExpertSessionProd();
 	}
 	else
 	{
-		ATSC.TooBookExpertSessionStage();
+		HCATSC.TooBookExpertSessionStage();
 	}
 	Thread.sleep(3000);
-	ATSC.TooBookTimeSlot();
+	HCATSC.TooBookTimeSlot();
 	Thread.sleep(3000);
 
 }
@@ -293,10 +297,10 @@ public void VerifyAllocatingBookingExpertSession() throws InterruptedException, 
 //@Test (priority = 8, description = "Booking Expert Session U7 window")
 public void VerifyAllocatingBookingExpert() throws InterruptedException, AWTException
 {
-	HCATSCounselingLib ATSC = new HCATSCounselingLib(driver);
+	HCATSCounselingLib HCATSC = new HCATSCounselingLib(driver);
 
 	
-	ATSC.TabsbuttonOnU7Enrolled();
+	HCATSC.TabsbuttonOnU7Enrolled();
 	Thread.sleep(2000);
 	BookExpertSessionU7Window();
 	Thread.sleep(10000);
@@ -307,40 +311,26 @@ public void VerifyAllocatingBookingExpert() throws InterruptedException, AWTExce
 
 public void VerifyU7PlusExpertSeesionBooked() throws InterruptedException
 {
-	HCATSCounselingLib ATSC = new HCATSCounselingLib(driver);
+	HCATSCounselingLib HCATSC = new HCATSCounselingLib(driver);
 	
-	ATSC.TabsbuttonOnU7PlusEnrolled();
+	HCATSC.TabsbuttonOnU7PlusEnrolled();
 	Thread.sleep(3000);
 	
-	ATSC.ScrollToMeetingTab();
+	HCATSC.ScrollToMeetingTab();
 	Thread.sleep(3000);
 	
-	ATSC.StartMeeting();
+	HCATSC.StartMeeting();
 	Thread.sleep(3000);
 	
-	ATSC.SwitchtoGoogleMeetButton();
+	HCATSC.SwitchtoGoogleMeetButton();
 	Thread.sleep(3000);
-	ATSC.EndMeeting();
+	HCATSC.EndMeeting();
 	
 
 }
 
-//@Test (priority = 10, description = "U7+ Expert Session Booked Eligible Candidate")
 
-public void VerifyU7PlusExpertSeesionEligibleCandidate() throws InterruptedException
-{
-	HCATSCounselingLib ATSC = new HCATSCounselingLib(driver);
-	
-	ATSC.TabsbuttonOnU7PlusEnrolled();
-	Thread.sleep(3000);
-
-	ATSC.RecommendationCompleted();
-	Thread.sleep(3000);	
-	
-}
-
-
-//@Test (priority = 11, description = "U7+ Batch Intake with Elgible")
+//@Test (priority = 10, description = "U7+ Batch Intake with Elgible")
 public void VerifyU7PlusBatchIntake() throws InterruptedException
 {
 	HCATSCounselingLib ATSC = new HCATSCounselingLib(driver);
@@ -351,9 +341,10 @@ public void VerifyU7PlusBatchIntake() throws InterruptedException
 	ATSC.U7PLusEligibleTheCandidate();  //---------------------EVEN With INtake has been added ---------------------//
 }
 
-//@Test (priority = 12, description = "U8 Expert Session Done Bucket")
+//@Test (priority = 11, description = "U8 Expert Session Done Bucket")
 
 public void VerifyU8Bucket() throws InterruptedException, AWTException
+
 {
 	HCATSCounselingLib ATSC = new HCATSCounselingLib(driver);
 	
@@ -365,7 +356,7 @@ public void VerifyU8Bucket() throws InterruptedException, AWTException
 }
 
 
-//@Test (priority = 13, description = "U9 MSA SIGNED")
+//@Test (priority = 12, description = "U9 MSA SIGNED")
 
 public void VerifyU9Stage1Bucket() throws InterruptedException
 {
@@ -378,24 +369,24 @@ public void VerifyU9Stage1Bucket() throws InterruptedException
 	
 }
 
-//@Test (priority = 14, description = "U9 MSA SIGNED LOR and SOP")
+//@Test (priority = 13, description = "U9 MSA SIGNED LOR and SOP")
+//
+//public void VerifyU9Stage2LORandSOPBucket() throws InterruptedException
+//{
+//	HCATSCounselingLib ATSC = new HCATSCounselingLib(driver);
+//	
+//	ATSC.U9bucketStage2LOR();
+//	Thread.sleep(2000);
+//	ATSC.ScrollToLORatU9();
+//	Thread.sleep(4000);
+//	LoRResponses();
+//	Thread.sleep(5000);
+//	ATSC.StudentLORandSOP();
+//
+//}
 
-public void VerifyU9Stage2LORandSOPBucket() throws InterruptedException
-{
-	HCATSCounselingLib ATSC = new HCATSCounselingLib(driver);
-	
-	ATSC.U9bucketStage2LOR();
-	Thread.sleep(2000);
-	ATSC.ScrollToLORatU9();
-	Thread.sleep(4000);
-	LoRResponses();
-	Thread.sleep(5000);
-	ATSC.StudentLORandSOP();
 
-}
-
-
-//@Test (priority = 15, description = "U9 MSA SIGNED")
+//@Test (priority = 14, description = "U9 MSA SIGNED")
 
 public void VerifyU9Stage3ApplicationProofBucket() throws InterruptedException, AWTException
 
@@ -417,7 +408,7 @@ public void CandidateData() throws InterruptedException
 
 {
 	driver.findElement(By.className("o_searchview_input")).click();
-	driver.findElement(By.className("o_searchview_input")).sendKeys("Couselling Expert Test");
+	driver.findElement(By.className("o_searchview_input")).sendKeys("Automation-User1");
 	Thread.sleep(3000);
 }
 
@@ -428,7 +419,7 @@ public void CandidateData1() throws InterruptedException
 	Thread.sleep(2000);
 	driver.findElement(By.className("o_searchview_input")).click();
 	Thread.sleep(2000);
-	driver.findElement(By.className("o_searchview_input")).sendKeys("Couselling Expert Test");
+	driver.findElement(By.className("o_searchview_input")).sendKeys("Automation-User1");
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//*[contains(@class, 'o_menu_item dropdown-item focus')]")).click();
 	Thread.sleep(2000);
@@ -660,7 +651,7 @@ public void BookExpertSessionU7Window() throws InterruptedException
 //		System.out.println("Counselor is "+driver.findElements(By.xpath("//*[contains(@class, 'o_cell o_wrap_input flex-grow-1 flex-sm-grow-0 text-break')]")).get(16).getText());
 //		System.out.println("Student is "+driver.findElements(By.xpath("//*[contains(@class, 'o_cell o_wrap_input flex-grow-1 flex-sm-grow-0 text-break')]")).get(17).getText());
 		Thread.sleep(2000);
-		driver.findElements(By.xpath("//*[contains(@class, 'o_cell o_wrap_input flex-grow-1 flex-sm-grow-0 text-break')]")).get(16).click();
+		driver.findElements(By.xpath("//*[contains(@class, 'o_cell o_wrap_input flex-grow-1 flex-sm-grow-0 text-break')]")).get(12).click();
 
 		// Get tomorrow's date
 		LocalDate tomorrow = LocalDate.now().plusDays(1);
@@ -685,7 +676,8 @@ public void BookExpertSessionU7Window() throws InterruptedException
 		driver.findElement(By.xpath("//*[contains(@name, 'confirm_slot')]")).click();
 		Thread.sleep(2000);
 		
-		driver.findElements(By.xpath("//*[contains(@class, 'btn btn-primary')]")).get(3).click();
+		driver.findElement(By.xpath("//button[@class='btn btn-primary'][normalize-space()='Ok']")).click();  //SLOT CONFIMATION OK BUTTON//
+		
 		Thread.sleep(2000);
 
 		driver.findElement(By.id("agenda")).sendKeys(Adding_CommentsTo_Agenda);
