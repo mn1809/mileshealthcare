@@ -49,7 +49,7 @@ public class HCATSLoanLib extends ATSLoanObj
 	//	PageFactory.initElements(driver, this); 
 		// TODO Auto-generated constructor stub
 	}
-
+ 
 	
 
 	    
@@ -64,7 +64,7 @@ public class HCATSLoanLib extends ATSLoanObj
 	{
 		driver.findElement(By.className("o_searchview_input")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.className("o_searchview_input")).sendKeys("Couselling Expert Test");
+		driver.findElement(By.className("o_searchview_input")).sendKeys("Automation-User1");
 		Thread.sleep(3000);
 	}
 	
@@ -76,7 +76,7 @@ public class HCATSLoanLib extends ATSLoanObj
 		Thread.sleep(2000);
 		driver.findElement(By.className("o_searchview_input")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.className("o_searchview_input")).sendKeys("Couselling Expert Test");
+		driver.findElement(By.className("o_searchview_input")).sendKeys("Automation-User1");
 		
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[contains(@class, 'o_menu_item dropdown-item focus')]")).click();
@@ -2180,7 +2180,7 @@ public void DocumentCollectionforUSFundingDocuments() throws InterruptedExceptio
 	
 	 WebElement fileInput1 = driver.findElements(By.xpath("//input[@type='file']")).get(0);
 	 fileInput1.sendKeys("C:\\Users\\Automation\\Pictures\\MASATTACHEMENT.jpg");
-	//   fileInput1.sendKeys("C:\\Users\\Miles\\Pictures\\Screenshots\\Frotedn-1.PNG"); 
+	 // fileInput1.sendKeys("C:\\Users\\Miles\\Pictures\\Screenshots\\Frotedn-1.PNG"); 
 	 Thread.sleep(10000);
 
 	    
@@ -2191,7 +2191,7 @@ public void DocumentCollectionforUSFundingDocuments() throws InterruptedExceptio
 	 Thread.sleep(3000);
 	
 	 WebElement fileInput2 = driver.findElements(By.xpath("//input[@type='file']")).get(0);
-	 fileInput2.sendKeys("C:\\Users\\Automation\\Pictures\\MASATTACHEMENT.jpg");
+	fileInput2.sendKeys("C:\\Users\\Automation\\Pictures\\MASATTACHEMENT.jpg");
 	//  fileInput2.sendKeys("C:\\Users\\Miles\\Pictures\\Screenshots\\Frotedn-1.PNG"); 
 	 Thread.sleep(10000);
 	    
@@ -2202,8 +2202,8 @@ public void DocumentCollectionforUSFundingDocuments() throws InterruptedExceptio
 	    Thread.sleep(3000);
 	    
 	    WebElement fileInput3 = driver.findElements(By.xpath("//input[@type='file']")).get(0);
-		 fileInput3.sendKeys("C:\\Users\\Automation\\Pictures\\MASATTACHEMENT.jpg");
-	//  fileInput3.sendKeys("C:\\Users\\Miles\\Pictures\\Screenshots\\Frotedn-1.PNG"); 
+	 fileInput3.sendKeys("C:\\Users\\Automation\\Pictures\\MASATTACHEMENT.jpg");
+	  //fileInput3.sendKeys("C:\\Users\\Miles\\Pictures\\Screenshots\\Frotedn-1.PNG"); 
 		 Thread.sleep(10000);
 	
 	//---------------------------------------------Financial Affidavit---------------------------------------------------------//
@@ -2215,7 +2215,7 @@ public void DocumentCollectionforUSFundingDocuments() throws InterruptedExceptio
 	    
 	    WebElement fileInput4 = driver.findElements(By.xpath("//input[@type='file']")).get(0);
 		fileInput4.sendKeys("C:\\Users\\Automation\\Pictures\\MASATTACHEMENT.jpg");
-		// fileInput4.sendKeys("C:\\Users\\Miles\\Pictures\\Screenshots\\Frotedn-1.PNG"); 
+	//	 fileInput4.sendKeys("C:\\Users\\Miles\\Pictures\\Screenshots\\Frotedn-1.PNG"); 
 		
 	    Thread.sleep(10000);
 	    
@@ -2325,28 +2325,28 @@ public void U13VisaExpertApprovals() throws InterruptedException
 	CandidateData1();
 	
 	
-//	driver.findElement(By.xpath("//*[contains(@name, 'student_document_line')]")).click();
-//	   Thread.sleep(2000);
-//	   
-//	    Actions act1 = new Actions(driver);
-//		act1.moveToElement(driver.findElement(By.xpath("//*[contains(@name, 'telephony_call_logs')]"))).perform();
-//		Thread.sleep(2000);
-//		
-//		//--------------------------Verifying Uploaded Passport--------------------------//
-//		driver.findElements(By.xpath("//*[contains(@class, 'btn btn-sm btn-warning')]")).get(0).click();
-//		Thread.sleep(2000);
-//		driver.findElement(By.xpath("//*[contains(@name, 'action_approve')]")).click();							//--------------DONE BY VISA EXPERT-------------//
-//		Thread.sleep(1500);
-//		driver.findElements(By.xpath("//*[contains(@class, 'btn btn-secondary')]")).get(2).click();
-//		Thread.sleep(3000);
-//		
-//		//--------------------------Verifying Uploaded Loan Sanction--------------------------//
-//		driver.findElements(By.xpath("//*[contains(@class, 'btn btn-sm btn-warning')]")).get(0).click();
-//		Thread.sleep(2000);
-//		driver.findElement(By.xpath("//*[contains(@name, 'action_approve')]")).click();									//--------------DONE BY VISA EXPERT-------------//
-//		Thread.sleep(1500);
-//		driver.findElements(By.xpath("//*[contains(@class, 'btn btn-secondary')]")).get(2).click();
-//		Thread.sleep(3000);
+	driver.findElement(By.xpath("//*[contains(@name, 'student_document_line')]")).click();
+	   Thread.sleep(2000);
+	   
+	    Actions act1 = new Actions(driver);
+		act1.moveToElement(driver.findElement(By.xpath("//*[contains(@name, 'telephony_call_logs')]"))).perform();
+		Thread.sleep(2000);
+		
+		//--------------------------Verifying Uploaded Passport--------------------------//
+		driver.findElements(By.xpath("//*[contains(@class, 'btn btn-sm btn-warning')]")).get(0).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[contains(@name, 'action_approve')]")).click();							//--------------DONE BY VISA EXPERT-------------//
+		Thread.sleep(1500);
+		driver.findElements(By.xpath("//*[contains(@class, 'btn btn-secondary')]")).get(2).click();
+		Thread.sleep(3000);
+		
+		//--------------------------Verifying Uploaded Loan Sanction--------------------------//
+		driver.findElements(By.xpath("//*[contains(@class, 'btn btn-sm btn-warning')]")).get(0).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[contains(@name, 'action_approve')]")).click();									//--------------DONE BY VISA EXPERT-------------//
+		Thread.sleep(1500);
+		driver.findElements(By.xpath("//*[contains(@class, 'btn btn-secondary')]")).get(2).click();
+		Thread.sleep(3000);
 
 	    Actions act2 = new Actions(driver);
 	   	act2.moveToElement(driver.findElement(By.xpath("//*[contains(@class, 'btn button_green_color btn-secondary')]"))).perform();

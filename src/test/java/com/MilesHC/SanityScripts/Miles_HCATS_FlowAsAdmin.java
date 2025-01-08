@@ -86,7 +86,7 @@ LoginPageLib loginObj ;
 //	 String ExpectedEligibilityCode = "Eligibility/B/24/09/115";
 //	 String ExpectedEnrollmentStatus = "New Student";
 //	 String ExpectedEligibilityType = "Eligibility not done";
-	 
+	  
 	 
 	 String ClassName = this.getClass().getSimpleName().toString(); 
 

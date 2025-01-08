@@ -59,7 +59,7 @@ LoginPageLib loginObj ;
 //	protected ATSPageLib atspageObj;
 	 
 	atspageObj ATSPageLib;
-	
+	 
 	String env;
 	
 //	ShareActivityPageLib ShareActivityPageObj;
@@ -181,7 +181,7 @@ LoginPageLib loginObj ;
 			 System.out.println("<-------------Passed Test case is -> " +result.getName()+"-------------->");
 		 }
 		 
-	driver.quit();
+//	driver.quit();
 	
 	 }
 	 
@@ -209,7 +209,7 @@ private void SetEvidenceDir()
 //}
 
 
-@Test (priority = 1, description = "U13C Miles Fincial Submitted to US Unversity Stage1")
+//@Test (priority = 1, description = "U13C Miles Fincial Submitted to US Unversity Stage1")
 public void VerifyU13CBucketStage1() throws InterruptedException, AWTException
 
 {
@@ -328,7 +328,7 @@ public void VerifyU17BucketStage1() throws InterruptedException, AWTException
 	ATSV.U17Stage1UploadingVISA();	 //-------------------Uploading VISA Proof--------------------//
 }
 
-//@Test (priority = 13, description = "U17 Miles Bucket Approving Visa Proof")
+@Test (priority = 13, description = "U17 Miles Bucket Approving Visa Proof")
 public void VerifyU17BucketStage2() throws InterruptedException, AWTException
 {	
 	
@@ -345,7 +345,7 @@ public void VerifyU17BucketStage2() throws InterruptedException, AWTException
 public void CandidateData() throws InterruptedException
 {
 	driver.findElement(By.className("o_searchview_input")).click();
-	driver.findElement(By.className("o_searchview_input")).sendKeys("Couselling Expert Test");
+	driver.findElement(By.className("o_searchview_input")).sendKeys("Automation-User1");
 	Thread.sleep(3000);
 }
 
@@ -356,7 +356,7 @@ public void CandidateData1() throws InterruptedException
 	Thread.sleep(2000);
 	driver.findElement(By.className("o_searchview_input")).click();
 	Thread.sleep(2000);
-	driver.findElement(By.className("o_searchview_input")).sendKeys("Couselling Expert Test");
+	driver.findElement(By.className("o_searchview_input")).sendKeys("Automation-User1");
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//*[contains(@class, 'o_menu_item dropdown-item focus')]")).click();
 	Thread.sleep(2000);
@@ -772,12 +772,17 @@ public void U16TooBookVISAMock() throws InterruptedException
 	driver.findElement(By.xpath("//*[contains(@class, 'btn button_orange_color btn-secondary')]")).click();
 	
 	Thread.sleep(2000);
-	System.out.println("Booking Session is "+driver.findElements(By.xpath("//*[contains(@class, 'o_cell o_wrap_input flex-grow-1 flex-sm-grow-0 text-break')]")).get(13).getText());
-	System.out.println("Counselor is "+driver.findElements(By.xpath("//*[contains(@class, 'o_cell o_wrap_input flex-grow-1 flex-sm-grow-0 text-break')]")).get(14).getText());
-	System.out.println("Student is "+driver.findElements(By.xpath("//*[contains(@class, 'o_cell o_wrap_input flex-grow-1 flex-sm-grow-0 text-break')]")).get(15).getText());
+	System.out.println("Booking Session is "+driver.findElements(By.xpath("//*[contains(@name, 'session_id')]")).get(0).getText());
 	Thread.sleep(2000);
-	driver.findElements(By.xpath("//*[contains(@class, 'o_cell o_wrap_input flex-grow-1 flex-sm-grow-0 text-break')]")).get(16).click();
-
+	//span[contains(text(),'VISA Mock Session')]
+	System.out.println("Counselor is "+driver.findElements(By.xpath("//*[contains(@name, 'emp_id')]")).get(0).getText());
+	Thread.sleep(2000);
+	System.out.println("Student is "+driver.findElements(By.xpath("//*[contains(@name, 'student_id')]")).get(0).getText());
+	Thread.sleep(2000);
+	
+	//driver.findElements(By.xpath("//*[contains(@class, 'o_cell o_wrap_input flex-grow-1 flex-sm-grow-0 text-break')]")).get(16).click();
+	driver.findElement(By.id("booked_date")).click();
+	Thread.sleep(1500);
 	// Get tomorrow's date
 	LocalDate tomorrow = LocalDate.now().plusDays(1);
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");

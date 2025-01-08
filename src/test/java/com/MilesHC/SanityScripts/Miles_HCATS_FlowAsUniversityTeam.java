@@ -58,7 +58,7 @@ LoginPageLib loginObj ;
 	
 //	protected ATSPageLib atspageObj;
 	 
-	atspageObj ATSPageLib;
+	atspageObj ATSPageLib; 
 	
 	String env;
 	
@@ -229,6 +229,7 @@ public void VerifyU10Bucket() throws InterruptedException, AWTException
 
 }
 
+
 //@Test (priority = 4, description= "U10 Approve Offer Letter")
 
 public void VerifyU10Stage2Bucket() throws InterruptedException
@@ -239,6 +240,7 @@ public void VerifyU10Stage2Bucket() throws InterruptedException
 	ATSU.U10BucketStage2();
 
 }
+
 
 //@Test (priority = 5, description= "U10 Final Approver of Offer Letter")
 
@@ -258,7 +260,7 @@ public void VerifyU10Stage3Bucket() throws InterruptedException
 public void CandidateData() throws InterruptedException
 {
 	driver.findElement(By.className("o_searchview_input")).click();
-	driver.findElement(By.className("o_searchview_input")).sendKeys("Couselling Expert Test");
+	driver.findElement(By.className("o_searchview_input")).sendKeys("Automation-User1");
 	Thread.sleep(3000);
 }
 
@@ -269,7 +271,7 @@ public void CandidateData1() throws InterruptedException
 	Thread.sleep(2000);
 	driver.findElement(By.className("o_searchview_input")).click();
 	Thread.sleep(2000);
-	driver.findElement(By.className("o_searchview_input")).sendKeys("Couselling Expert Test");
+	driver.findElement(By.className("o_searchview_input")).sendKeys("Automation-User1");
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//*[contains(@class, 'o_menu_item dropdown-item focus')]")).click();
 	Thread.sleep(2000);

@@ -63,7 +63,7 @@ public class HCATSUniversityLib extends ATSUniversityObj
 	{
 		driver.findElement(By.className("o_searchview_input")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.className("o_searchview_input")).sendKeys("Couselling Expert Test");
+		driver.findElement(By.className("o_searchview_input")).sendKeys("Automation-User1");
 		Thread.sleep(3000);
 	}
 	
@@ -75,7 +75,7 @@ public class HCATSUniversityLib extends ATSUniversityObj
 		Thread.sleep(2000);
 		driver.findElement(By.className("o_searchview_input")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.className("o_searchview_input")).sendKeys("Couselling Expert Test");
+		driver.findElement(By.className("o_searchview_input")).sendKeys("Automation-User1");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[contains(@class, 'o_menu_item dropdown-item focus')]")).click();
 		Thread.sleep(2000);
@@ -1648,7 +1648,7 @@ public void UPPlusReuploading() throws InterruptedException, AWTException
 	driver.findElement(By.xpath("//*[contains(@name, 'action_reupload')]")).click();//Adding Remark for COnfirmation Screenshot status.//
 	Thread.sleep(2000);
 	
-	driver.findElement(By.id("remark")).sendKeys("Adding Remark to Check Reupload");
+	driver.findElement(By.id("remark")).sendKeys("Adding Remark to Check Reupload"); 
 	Thread.sleep(2000);
 	driver.findElement(By.xpath("//*[contains(@name, 'action_submit_remark')]")).click();	//CLIKCING SUBMIT//
 	Thread.sleep(4000);
@@ -1665,7 +1665,7 @@ public void UPPlusReuploading() throws InterruptedException, AWTException
 	    WebElement fileInput1 = driver.findElements(By.xpath("//input[@type='file']")).get(0);
 	    fileInput1.sendKeys("C:\\Users\\Automation\\Pictures\\MASATTACHEMENT.jpg");
 	    
-	  //  fileInput1.sendKeys("C:\\Users\\Miles\\Pictures\\Screenshots\\Frotedn-1.PNG");    
+	 //  fileInput1.sendKeys("C:\\Users\\Miles\\Pictures\\Screenshots\\Frotedn-1.PNG");    
 	    
 	    Thread.sleep(15000);    
     
@@ -1746,9 +1746,9 @@ public void U9PlusAddingMOI()throws InterruptedException, AWTException
 		Thread.sleep(3000);
 		
 		 WebElement fileInput1 = driver.findElements(By.xpath("//input[@type='file']")).get(2);
-		  fileInput1.sendKeys("C:\\Users\\Automation\\Pictures\\MASATTACHEMENT.jpg");
+//		  fileInput1.sendKeys("C:\\Users\\Automation\\Pictures\\MASATTACHEMENT.jpg");
 		
-//		      fileInput1.sendKeys("C:\\Users\\Miles\\Pictures\\Screenshots\\Frotedn-1.PNG");    
+		      fileInput1.sendKeys("C:\\Users\\Miles\\Pictures\\Screenshots\\Frotedn-1.PNG");    
 	    Thread.sleep(10000);
 	    
 		driver.findElement(By.xpath("//*[contains(@name, 'action_update_line')]")).click();

@@ -64,7 +64,7 @@ LoginPageLib loginObj ;
 	String env;
 	
 //	ShareActivityPageLib ShareActivityPageObj;
-//	 atspageObj = new ATSPageLib(driver);
+//	 atspageObj = new ATSPageLib(driver); 
 	 
 	 LocalDate currentDate = LocalDate.now();
 	 LocalDate tomaroDate = LocalDate.now().plusDays(1);
@@ -242,14 +242,21 @@ public void VerifyU13ABucketStage2() throws InterruptedException, AWTException
 	Thread.sleep(2000);
 	ATSL.U13ABucketStage2USFunding();
 	Thread.sleep(2000);
-	ATSL.ApprovingCollectedDocumentsU13A();
-	
-	ATSL.U13VisaExpertApprovals();
-		
+	ATSL.ApprovingCollectedDocumentsU13A();	
 		
 }
 
-//@Test (priority = 6, description = "U13B Miles US Funding Financial Skips Bucket Stage 1")
+//@Test (priority = 6, description = "U13A Miles US Funding Bucket Stage3 Approving US Funding Documnents By VISA Team")
+
+public void VerifyU13ABucketStage3() throws InterruptedException, AWTException
+{
+HCATSLoanLib ATSL = new HCATSLoanLib(driver);
+	
+	Thread.sleep(2000);
+	ATSL.U13VisaExpertApprovals();
+}
+
+//@Test (priority = 7, description = "U13B Miles US Funding Financial Skips Bucket Stage 1")
 
 public void VerifyU13BBucketStage1() throws InterruptedException
 
@@ -261,7 +268,7 @@ public void VerifyU13BBucketStage1() throws InterruptedException
 
 }
 
-//@Test (priority = 7, description = "U13B Miles US Funding Uploading Funding Proof Bucket Stage 2")
+//@Test (priority = 8, description = "U13B Miles US Funding Uploading Funding Proof Bucket Stage 2")
 public void VerifyU13BBucketStage2() throws InterruptedException, AWTException
 
 {
@@ -273,7 +280,7 @@ public void VerifyU13BBucketStage2() throws InterruptedException, AWTException
 
 
 
-//@Test (priority = 8, description = "U13B Miles US Funding Approvving US Finace Proof Bucket Stage 3")
+//@Test (priority = 9, description = "U13B Miles US Funding Approvving US Finace Proof Bucket Stage 3")
 public void VerifyU13BBucketStage3() throws InterruptedException, AWTException
 
 {
@@ -291,7 +298,7 @@ public void VerifyU13BBucketStage3() throws InterruptedException, AWTException
 public void CandidateData() throws InterruptedException
 {
 	driver.findElement(By.className("o_searchview_input")).click();
-	driver.findElement(By.className("o_searchview_input")).sendKeys("Couselling Expert Test");
+	driver.findElement(By.className("o_searchview_input")).sendKeys("Automation-User1");
 	Thread.sleep(3000);
 }
 
@@ -302,7 +309,7 @@ public void CandidateData1() throws InterruptedException
 	Thread.sleep(2000);
 	driver.findElement(By.className("o_searchview_input")).click();
 	Thread.sleep(2000);
-	driver.findElement(By.className("o_searchview_input")).sendKeys("Couselling Expert Test");
+	driver.findElement(By.className("o_searchview_input")).sendKeys("Automation-User1");
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//*[contains(@class, 'o_menu_item dropdown-item focus')]")).click();
 	Thread.sleep(2000);

@@ -48,11 +48,7 @@ public class HCATSVisaLib extends ATSVisaObj
 	//	PageFactory.initElements(driver, this); 
 		// TODO Auto-generated constructor stub
 	}
-
-	
-
-	    
-	    
+    
 	public void ClearMyCandidateFilter() throws InterruptedException
 	{
 		Thread.sleep(3);
@@ -63,7 +59,7 @@ public class HCATSVisaLib extends ATSVisaObj
 	{
 		driver.findElement(By.className("o_searchview_input")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.className("o_searchview_input")).sendKeys("Couselling Expert Test");
+		driver.findElement(By.className("o_searchview_input")).sendKeys("Automation-User1");
 		Thread.sleep(3000);
 	}
 	
@@ -75,7 +71,7 @@ public class HCATSVisaLib extends ATSVisaObj
 		Thread.sleep(2000);
 		driver.findElement(By.className("o_searchview_input")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.className("o_searchview_input")).sendKeys("Couselling Expert Test");
+		driver.findElement(By.className("o_searchview_input")).sendKeys("Automation-User1");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[contains(@class, 'o_menu_item dropdown-item focus')]")).click();
 		Thread.sleep(2000);
@@ -2404,8 +2400,6 @@ public void U13CBucketStage1() throws InterruptedException, AWTException
 	driver.findElement(By.xpath("//*[contains(@class, 'btn button_orange_color btn-secondary')]")).isDisplayed();
 	System.out.println("Light Green Button is "+driver.findElement(By.xpath("//*[contains(@class, 'btn button_orange_color btn-secondary')]")).getText());
 
-	driver.findElement(By.xpath("//*[contains(@class, 'btn button_red_color btn-secondary')]")).isDisplayed();
-	System.out.println("Red Button is "+driver.findElement(By.xpath("//*[contains(@class, 'btn button_red_color btn-secondary')]")).getText());
 	
 	driver.findElement(By.xpath("//*[contains(@class, 'btn button_yellow_color btn-secondary')]")).isDisplayed();
 	System.out.println("Yellow Button is "+driver.findElement(By.xpath("//*[contains(@class, 'btn button_yellow_color btn-secondary')]")).getText());
@@ -2426,8 +2420,8 @@ public void U13CBucketStage1() throws InterruptedException, AWTException
 	  Thread.sleep(5000);  
 	    
 	    WebElement fileInput1 = driver.findElements(By.xpath("//input[@type='file']")).get(0);
-		// fileInput1.sendKeys("C:\\Users\\Automation\\Pictures\\MASATTACHEMENT.jpg");
-	fileInput1.sendKeys("C:\\Users\\Miles\\Pictures\\Screenshots\\Frotedn-1.PNG"); 
+		 fileInput1.sendKeys("C:\\Users\\Automation\\Pictures\\MASATTACHEMENT.jpg");
+//	fileInput1.sendKeys("C:\\Users\\Miles\\Pictures\\Screenshots\\Frotedn-1.PNG"); 
 	Thread.sleep(10000);
 	
 	
@@ -2478,9 +2472,6 @@ public void U14BucketStage1() throws InterruptedException
 	
 	driver.findElement(By.xpath("//*[contains(@class, 'btn oe_subtotal_footer button_orange_color btn-secondary')]")).isDisplayed();
 	System.out.println("Light Green Button is "+driver.findElement(By.xpath("//*[contains(@class, 'btn oe_subtotal_footer button_orange_color btn-secondary')]")).getText());
-	
-	driver.findElement(By.xpath("//*[contains(@class, 'btn button_red_color btn-secondary')]")).isDisplayed();
-	System.out.println("Red Button is "+driver.findElement(By.xpath("//*[contains(@class, 'btn button_red_color btn-secondary')]")).getText());
 	
 	driver.findElement(By.xpath("//*[contains(@class, 'btn button_yellow_color btn-secondary')]")).isDisplayed();
 	System.out.println("Yellow Button is "+driver.findElement(By.xpath("//*[contains(@class, 'btn button_yellow_color btn-secondary')]")).getText());
@@ -2586,7 +2577,7 @@ public void TooBookVISASlot() throws InterruptedException, AWTException
 {
 	driver.findElement(By.xpath("//*[contains(@title, 'Meetings')]")).click();
 	Thread.sleep(2000);
-	driver.findElements(By.xpath("//*[contains(@role, 'menuitem')]")).get(1).click();
+	driver.findElements(By.xpath("//*[contains(@role, 'menuitem')]")).get(2).click();
 	Thread.sleep(3000);
 	driver.findElement(By.xpath("//*[contains(@class, 'btn btn-primary o_list_button_add')]")).click();
 	Thread.sleep(3000);
@@ -2682,10 +2673,7 @@ public void U16Bucket() throws InterruptedException
 	driver.findElement(By.xpath("//*[contains(@class, 'btn button_blue_color btn-secondary')]")).isDisplayed();
 	System.out.println("Blue Button 1 is "+driver.findElement(By.xpath("//*[contains(@class, 'btn button_blue_color btn-secondary')]")).getText());
 	
-	
-	driver.findElement(By.xpath("//*[contains(@class, 'btn button_red_color btn-secondary')]")).isDisplayed();
-	System.out.println("Red Button is "+driver.findElement(By.xpath("//*[contains(@class, 'btn button_red_color btn-secondary')]")).getText());
-	
+
 	driver.findElement(By.xpath("//*[contains(@class, 'btn button_yellow_color btn-secondary')]")).isDisplayed();
 	System.out.println("Yellow Button is "+driver.findElement(By.xpath("//*[contains(@class, 'btn button_yellow_color btn-secondary')]")).getText());
 	
@@ -2704,9 +2692,12 @@ public void U15BucketStage2UploadingVISADetails() throws InterruptedException, A
 		////-------------------------Uploading VISA SLOT Details and Documents----------------------//
 	driver.findElement(By.xpath("//*[contains(@class, 'btn button_orange_color btn-secondary')]")).click();
 	
-	driver.findElement(By.id("visa_city_id")).click();
+	WebElement VisaCity = driver.findElement(By.id("visa_city_id"));
+	VisaCity.click();
 	Thread.sleep(2000);
-	driver.findElements(By.xpath("//*[contains(@class, 'o-autocomplete--input o_input')]")).get(0).sendKeys("Dubai");
+	VisaCity.sendKeys("Dubai");
+
+//	driver.findElements(By.xpath("//*[contains(@class, 'o-autocomplete--input o_input')]")).get(0).sendKeys("Dubai");
 	Thread.sleep(3000);
 	List <WebElement> Options1 = driver.findElements((By.xpath("//*[contains(@class, 'o-autocomplete--dropdown-menu dropdown-menu ui-widget ui-autocomplete show')]")));
 	Options1.get(0).click();
@@ -2729,9 +2720,9 @@ public void U15BucketStage2UploadingVISADetails() throws InterruptedException, A
 		  Thread.sleep(5000);  
 		    
 		    WebElement fileInput1 = driver.findElements(By.xpath("//input[@type='file']")).get(0);
-		//	 fileInput1.sendKeys("C:\\Users\\Automation\\Pictures\\MASATTACHEMENT.jpg");
+		 fileInput1.sendKeys("C:\\Users\\Automation\\Pictures\\MASATTACHEMENT.jpg");
 			 
-			 fileInput1.sendKeys("C:\\Users\\Miles\\Pictures\\Screenshots\\Frotedn-1.PNG"); 
+		//	 fileInput1.sendKeys("C:\\Users\\Miles\\Pictures\\Screenshots\\Frotedn-1.PNG"); 
 		Thread.sleep(10000);
 	
 		driver.findElement(By.xpath("//*[contains(@name, 'action_submit_visa_slot_verification')]")).click();
@@ -2753,11 +2744,7 @@ public void U16VisaRecevied() throws InterruptedException
 	
 	driver.findElement(By.xpath("//*[contains(@class, 'btn button_red_color btn-secondary')]")).isDisplayed();
 	System.out.println("Red Button 1 is "+driver.findElement(By.xpath("//*[contains(@class, 'btn button_red_color btn-secondary')]")).getText());
-	
-	
-	driver.findElements(By.xpath("//*[contains(@class, 'btn button_red_color btn-secondary')]")).get(1).isDisplayed();
-	System.out.println("Red Button 2 is "+driver.findElements(By.xpath("//*[contains(@class, 'btn button_red_color btn-secondary')]")).get(1).getText());
-	
+
 	driver.findElement(By.xpath("//*[contains(@class, 'btn button_yellow_color btn-secondary')]")).isDisplayed();
 	System.out.println("Yellow Button is "+driver.findElement(By.xpath("//*[contains(@class, 'btn button_yellow_color btn-secondary')]")).getText());
 	
@@ -2804,8 +2791,8 @@ public void U17Stage1UploadingVISA() throws InterruptedException, AWTException
 	 Thread.sleep(5000);  
 	    
 	 WebElement fileInput1 = driver.findElements(By.xpath("//input[@type='file']")).get(0);
-	 fileInput1.sendKeys("C:\\Users\\Automation\\Pictures\\MASATTACHEMENT.jpg");
-//	 fileInput1.sendKeys("C:\\Users\\Miles\\Pictures\\Screenshots\\Frotedn-1.PNG"); 
+//	 fileInput1.sendKeys("C:\\Users\\Automation\\Pictures\\MASATTACHEMENT.jpg");
+	 fileInput1.sendKeys("C:\\Users\\Miles\\Pictures\\Screenshots\\Frotedn-1.PNG"); 
 		
 	 Thread.sleep(10000);
 
