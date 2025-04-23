@@ -36,7 +36,7 @@ public class LoginPageLib extends LoginPageObj
 		switch (URL)
 		{
 		
-		case "https://helthcare-uat.mileseducation.com/web/login" : // Serverless Stage
+		case "https://cpe-masterclass-uat.web.app/app/home" : // Serverless Stage
 			System.out.println("Serverless Environment");
 			password.click();
 			password.sendKeys(passwordValue);
@@ -44,7 +44,7 @@ public class LoginPageLib extends LoginPageObj
 			
 			break;
 		
-		case "https://nursing.milestalenthub.com/web/login" : // Existing Prod 
+		case "https://milesmasterclass.com/app/home" : // Existing Prod 
 			System.out.println("Regular Environment");
 			//btn btn-login
 			//driver.findElement(By.xpath("//*[contains(@class, 'btn btn-login')]")).click();

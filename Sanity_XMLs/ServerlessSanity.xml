@@ -10,7 +10,7 @@
 		<class name="com.MilesHC.SanityScripts.Miles_HCATS_FlowAsFundingTeam"/>
 		<class name="com.MilesHC.SanityScripts.Miles_HCATS_FlowAsUniversityTeam"/>
 		<class name="com.MilesHC.SanityScripts.Miles_HCATS_FlowAsVisaTeam"/>
-		<class name="com.MilesHC.SanityScripts.Miles_OPT_FlowAsAdmin"/>
+		
 		
 		<!--<class name="com.frontierX.SanityScripts.FxSanity_Coach"/>-->
     </classes>
