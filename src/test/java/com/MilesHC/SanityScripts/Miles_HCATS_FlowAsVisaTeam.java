@@ -181,7 +181,7 @@ LoginPageLib loginObj ;
 			 System.out.println("<-------------Passed Test case is -> " +result.getName()+"-------------->");
 		 }
 		 
-//	driver.quit();
+		 	driver.quit();
 	
 	 }
 	 
