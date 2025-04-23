@@ -54,7 +54,7 @@ public class Miles_HCATS_FlowAsAdmin extends MilesHealthCareSettings
 LoginPageLib loginObj ;
 	
  HomePageLib homeObj ;
-	 a
+	 
 //	protected ATSPageLib atspageObj;
 	 																// HI MILES HELAHCARE//
 	atspageObj ATSPageLib;
