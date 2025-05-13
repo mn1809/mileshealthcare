@@ -59,7 +59,7 @@ LoginPageLib loginObj ;
 	 
 	atspageObj ATSPageLib;
 	
-	String env; 
+	String env;
 	
 //	ShareActivityPageLib ShareActivityPageObj;
 //	 atspageObj = new ATSPageLib(driver);
@@ -197,7 +197,7 @@ private void SetEvidenceDir()
 //	 Info = "manoj.hr@mileseducation.com";
 //}
 	
-@Test(priority = 1,description = "Verify Candidate login")
+@Test(priority = 1,description = "Verify Admin Login")
 public void ClearingHomePage() throws InterruptedException
 
 {
