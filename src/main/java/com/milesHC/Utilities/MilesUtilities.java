@@ -443,10 +443,10 @@ public class MilesUtilities
 			
 			{
 			case ServerlessProd :
-			return "https://nursing.milestalenthub.com/web/login";
+			return "https://milesmasterclass.com/app/home";
 			
 			case ServerlessStage :
-				return "https://helthcare-uat.mileseducation.com/web/login";
+				return "https://cpe-masterclass-uat.web.app/app/home";
 			
 			}
 			return "";

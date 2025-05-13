@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Paths;
 import java.time.Duration;
+import java.util.ArrayList;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -21,9 +23,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public abstract class MilesHealthCareSettings
 {
 	protected WebDriver driver ;
-	protected static String StageURL = "https://helthcare-uat.mileseducation.com/web/login";
+	protected static String StageURL = "https://cpe-masterclass-uat.web.app/app/home";
 
-	protected static String ProdURL = "https://nursing.milestalenthub.com/web/login";
+	protected static String ProdURL = "https://milesmasterclass.com/app/home";
 	
 	
 	protected static String FrontendStageURL = "https://miles-healthcare-ats-uat.web.app/auth";
@@ -145,12 +147,22 @@ public static void getChromeVersion() throws IOException
 	{
 		
 		WebDriver driver = null;
-	    
+	    ChromeOptions options = new ChromeOptions();
+
+	    // Path to extension folder (unpacked CRX)
+	    String extensionPath = Paths.get("resources/chnccghejnflbccphgkncbmllhfljdfa")
+	                                .toAbsolutePath().toString();
 	    if (env.equalsIgnoreCase("stage"))
 	    {				
 	    	if (Environment.contains("Win"))
 			{
-	    		options.addArguments("--remote-allow-origins=*");
+	  
+	    		 // ✅ Extension setup for Windows
+	            options.addArguments("--remote-allow-origins=*");
+	            options.addArguments("--disable-extensions-except=" + extensionPath);
+	            options.addArguments("--load-extension=" + extensionPath);
+	            
+	            
 	    		WebDriverManager.chromedriver().setup(); // Automating Driver management :) 
 				System.out.println("WebDriverManager will take care of Driver management from here");
 				driver = new ChromeDriver(options);
@@ -159,6 +171,14 @@ public static void getChromeVersion() throws IOException
 				driver.get(MilesUtilities.GetURLs(FxEnums.URLs.ServerlessStage));
 				//System.out.println("Launching Prod Fx Web Page in Win Env");
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+				
+				 // ✅ Close the extension tab if it opens
+	            ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+	            if (tabs.size() > 1) {
+	                driver.switchTo().window(tabs.get(1));
+	                driver.close();
+	                driver.switchTo().window(tabs.get(0));
+	            }
 				
 			}
 			else
@@ -189,7 +209,10 @@ public static void getChromeVersion() throws IOException
 			
 			if (Environment.contains("Win"))
 			{
-				options.addArguments("--remote-allow-origins=*");
+				 // ✅ Extension setup for Windows
+				   options.addArguments("--remote-allow-origins=*");
+		            options.addArguments("--disable-extensions-except=" + extensionPath);
+		            options.addArguments("--load-extension=" + extensionPath);
 	    		WebDriverManager.chromedriver().setup(); // Automating Driver management :) 
 				System.out.println("WebDriverManager will take care of Driver management from here");
 				driver = new ChromeDriver(options);
@@ -198,6 +221,14 @@ public static void getChromeVersion() throws IOException
 				driver.get(ProdURL);
 				//System.out.println("Launching Prod Fx Web Page in Win Env");
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+				
+				   // ✅ Close the extension tab if it opens
+	            ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+	            if (tabs.size() > 1) {
+	                driver.switchTo().window(tabs.get(1));
+	                driver.close();
+	                driver.switchTo().window(tabs.get(0));
+	            }
 			}
 			else
 			{
